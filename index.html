@@ -37,7 +37,7 @@
       background: var(--dark);
       color: var(--white);
       overflow-x: hidden;
-      padding-top: 64px; /* Navbar mais compacta */
+      padding-top: 64px; /* Navbar mais compacta no PC */
     }
 
 /* ══════════════════════════════════════
@@ -52,7 +52,7 @@
     .navbar-inner {
       max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px; /* Navbar mais compacta */
+      height: 64px; /* Navbar mais compacta no PC */
     }
 
     .logo-link {
@@ -63,7 +63,7 @@
     
     /* NOVO LOGOTIPO (SUBSTITUI O TEXTO) */
     .logo-img {
-      height: 48px; /* Tamanho base */
+      height: 48px; /* Tamanho base no PC */
       width: auto;
       max-width: 220px;
       object-fit: contain;
@@ -486,15 +486,15 @@
 @media(max-width:860px){
   /* Ajustes Navbar e Logo no Mobile */
   .logo-img {
-    height: 50px !important; /* LOGOTIPO MUITO MAIOR NO TELEMÓVEL */
-    max-width: 180px !important;
-    margin-top: 4px; /* Pequeno ajuste para centralizar verticalmente */
+    height: 80px !important; /* AUMENTADO PARA 80px */
+    max-width: 280px !important; /* AUMENTADO PARA 280px */
+    margin-top: 2px;
   }
   .navbar-inner {
-    height: 60px; /* Navbar mais baixa no celular */
+    height: 84px; /* AUMENTADO A BARRA PARA NÃO CORTAR O LOGO */
   }
   body {
-    padding-top: 60px; /* Ajuste para a altura da nova navbar */
+    padding-top: 84px; /* AUMENTADO O ESPAÇO DO TOPO */
   }
 
   .hero { min-height: auto; padding-bottom: 0; }
