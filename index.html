@@ -13,7 +13,6 @@
     body, body *:not(i):not([class*="fa"]) { font-family: 'Times New Roman', Times, serif; }
 
     :root {
-      /* Nova Paleta de Cores baseada no Logotipo */
       --black:      #0a0a0c;   /* Fundo escuro tecnológico */
       --dark:       #121214;
       --charcoal:   #1e1e22;
@@ -64,9 +63,9 @@
     
     /* NOVO LOGOTIPO (SUBSTITUI O TEXTO) */
     .logo-img {
-      height: 48px; /* Logotipo Maior */
+      height: 48px; /* Tamanho base */
       width: auto;
-      max-width: 260px;
+      max-width: 220px;
       object-fit: contain;
       display: block;
     }
@@ -433,7 +432,6 @@
       flex-shrink: 0;
     }
     .mmDrawer-head .mm-title {
-      /* Logo pequeno para o mobile */
       font-size: .65rem; font-weight: 700;
       letter-spacing: .22em; text-transform: uppercase;
       color: rgba(255,255,255,.25);
@@ -488,8 +486,9 @@
 @media(max-width:860px){
   /* Ajustes Navbar e Logo no Mobile */
   .logo-img {
-    height: 40px; /* Logotipo maior no celular */
-    max-width: 200px;
+    height: 50px !important; /* LOGOTIPO MUITO MAIOR NO TELEMÓVEL */
+    max-width: 180px !important;
+    margin-top: 4px; /* Pequeno ajuste para centralizar verticalmente */
   }
   .navbar-inner {
     height: 60px; /* Navbar mais baixa no celular */
@@ -500,7 +499,7 @@
 
   .hero { min-height: auto; padding-bottom: 0; }
   .hero-content {
-    padding-top: 1.2rem !important; /* Espaço reduzido no topo */
+    padding-top: 1.2rem !important;
     padding-bottom: 2rem;
   }
   .hero-title {
