@@ -37,7 +37,7 @@
       background: var(--dark);
       color: var(--white);
       overflow-x: hidden;
-      padding-top: 64px; /* Navbar mais compacta no PC */
+      padding-top: 64px; /* Navbar mais compacta */
     }
 
 /* ══════════════════════════════════════
@@ -52,7 +52,7 @@
     .navbar-inner {
       max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px; /* Navbar mais compacta no PC */
+      height: 64px; /* Navbar mais compacta */
     }
 
     .logo-link {
@@ -63,7 +63,7 @@
     
     /* NOVO LOGOTIPO (SUBSTITUI O TEXTO) */
     .logo-img {
-      height: 48px; /* Tamanho base no PC */
+      height: 48px; /* Tamanho base */
       width: auto;
       max-width: 220px;
       object-fit: contain;
@@ -486,15 +486,17 @@
 @media(max-width:860px){
   /* Ajustes Navbar e Logo no Mobile */
   .logo-img {
-    height: 80px !important; /* AUMENTADO PARA 80px */
-    max-width: 280px !important; /* AUMENTADO PARA 280px */
-    margin-top: 2px;
+    height: 42px !important;
+    width: auto !important;
+    max-width: 260px !important;
+    margin-top: 0 !important;
+    object-fit: contain !important;
   }
   .navbar-inner {
-    height: 84px; /* AUMENTADO A BARRA PARA NÃO CORTAR O LOGO */
+    height: 64px;
   }
   body {
-    padding-top: 84px; /* AUMENTADO O ESPAÇO DO TOPO */
+    padding-top: 64px;
   }
 
   .hero { min-height: auto; padding-bottom: 0; }
