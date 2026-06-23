@@ -5,29 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
 <title>IMPERSILVA TECH — Lojas Online que Vendem</title>
 <meta name="description" content="Criamos lojas online profissionais para empreendedores angolanos. Venda os seus produtos sem precisar de loja física. Lançamento em 7 dias."/>
-<!-- Open Graph -->
-<meta property="og:type"        content="website"/>
-<meta property="og:locale"      content="pt_AO"/>
-<meta property="og:site_name"   content="IMPERSILVA TECH"/>
-<meta property="og:title"       content="IMPERSILVA TECH — Lojas Online que Vendem"/>
-<meta property="og:description" content="Criamos lojas online profissionais para empreendedores angolanos. Venda os seus produtos sem precisar de loja física. Lançamento em 7 dias."/>
-<meta property="og:url"         content="https://impersilva.ao/"/>
-<meta property="og:image"       content="https://impersilva.ao/og-cover.jpg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height"content="630"/>
-<meta property="og:image:alt"   content="IMPERSILVA TECH — Lojas Online que Vendem"/>
-<!-- Twitter Card -->
-<meta name="twitter:card"        content="summary_large_image"/>
-<meta name="twitter:title"       content="IMPERSILVA TECH — Lojas Online que Vendem"/>
-<meta name="twitter:description" content="Criamos lojas online profissionais para empreendedores angolanos. Venda os seus produtos sem precisar de loja física. Lançamento em 7 dias."/>
-<meta name="twitter:image"       content="https://impersilva.ao/og-cover.jpg"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <script src="/config.js"></script>
 <style>
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-family: 'Times New Roman', Times, serif; }
-    body, body * { font-family: inherit; }
+    body, body *:not(i):not([class*="fa"]) { font-family: 'Times New Roman', Times, serif; }
 
     :root {
       --black:      #0a0a0c;   /* Fundo escuro tecnológico */
@@ -50,7 +33,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Times New Roman', Times, serif !important;
+      font-family: 'Times New Roman', Times, serif;
       background: var(--dark);
       color: var(--white);
       overflow-x: hidden;
@@ -80,13 +63,11 @@
     
     /* NOVO LOGOTIPO (SUBSTITUI O TEXTO) */
     .logo-img {
-      height: 48px;
+      height: 48px; /* Tamanho base */
       width: auto;
       max-width: 220px;
       object-fit: contain;
       display: block;
-      mix-blend-mode: screen;
-      filter: contrast(1.6) brightness(1.1);
     }
 
     .nav-links { display: flex; align-items: center; gap: 0.1rem; list-style: none; }
@@ -334,7 +315,7 @@
 .ndot.active { background:var(--blue);width:16px;border-radius:3px }
 
 /* ══ CATEGORIAS SLIDER ══ */
-.cats-sec { padding:80px 0;background:var(--dark);position:relative;overflow:hidden }
+.cats-sec { padding:80px 0;background:var(--dark) }
 .cats-header { display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px }
 .cats-slider { position:relative;overflow:hidden;border-radius:16px }
 .cats-track { display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1) }
@@ -370,6 +351,24 @@
   .cat-nome { font-size:1.15rem; }
   .cat-desc { font-size:.78rem; }
 }
+
+/* ══ DEPOIMENTOS SLIDER ══ */
+.dep-sec { padding:80px 0;background:var(--black) }
+.dep-slider { position:relative;overflow:hidden;border-radius:14px }
+.dep-track { display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1) }
+.dep-item { min-width:100%;padding:36px;background:var(--charcoal);border:1px solid var(--border);border-radius:14px }
+.dep-quote { font-size:2.8rem;font-weight:900;line-height:1;margin-bottom:10px; color: var(--blue-lt); }
+.dep-txt { font-size:.9375rem;font-style:italic;font-weight:300;color:var(--gray-lt);line-height:1.8;margin-bottom:20px }
+.dep-author { display:flex;align-items:center;gap:12px }
+.dep-av { width:40px;height:40px;border-radius:50%;background:var(--charcoal-lt);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:var(--blue);flex-shrink:0 }
+.dep-name { font-size:.88rem;font-weight:600 }
+.dep-role { font-size:.72rem;color:var(--gray);margin-top:2px }
+.dep-controls { display:flex;align-items:center;gap:10px;margin-top:16px }
+.dep-btn { width:32px;height:32px;border-radius:50%;background:var(--charcoal);border:1px solid var(--border);color:var(--gray-lt);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:.2s }
+.dep-btn:hover { background:var(--blue);border-color:var(--blue);color:var(--white) }
+.dep-dots { display:flex;gap:5px;flex:1;justify-content:center }
+.ddot { width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:.25s }
+.ddot.active { background:var(--blue);width:18px;border-radius:3px }
 
 /* ══ CTA ══ */
     .cta-section {
@@ -416,7 +415,7 @@
     .btn-blue:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,102,194,0.35); }
 
 /* ══ FOOTER ══ */
-    footer { background: var(--black); border-top: 1px solid var(--divider); padding: 4rem 0 2rem; position: relative; overflow: hidden; }
+    footer { background: var(--black); border-top: 1px solid var(--divider); padding: 4rem 0 2rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
     .footer-divider { height: 1px; background: var(--divider); margin: 2.5rem 0 1.5rem; }
     .footer-bottom {
@@ -561,19 +560,20 @@
     overflow: hidden;
     margin-bottom: 12px;
   }
-  .pilares-sec, .cats-sec { padding: 24px 0 !important; }
+  .pilares-sec, .cats-sec, .dep-sec { padding: 24px 0 !important; }
   .sec-title { margin-bottom: 16px !important; }
   .cats-header { margin-bottom: 20px !important; }
   .pilares-row { margin-bottom: 0 !important; }
   .cta-section { padding: 2.5rem 0 !important; }
   .cta-title { margin-bottom: 0.5rem !important; }
   .cta-desc { margin-bottom: 1.5rem !important; }
+  .dep-slider { margin-bottom: 0 !important; }
+  .dep-controls { margin-top: 10px !important; }
   footer { padding: 2.5rem 0 1.5rem !important; }
 }
 @media(max-width:480px){
   .cat { height:340px; }
   .passos { grid-template-columns: 1fr !important; }
-  .news-card { height: 320px; }
 }
 </style>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
@@ -583,10 +583,8 @@
 <nav class="navbar">
   <div class="navbar-inner">
     <a class="logo-link" href="/index.html">
-      <picture>
-        <source srcset="IMPERSILVA_TECH_LOGO.png" type="image/png"/>
-        <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" class="logo-img" width="220" height="48" fetchpriority="high"/>
-      </picture>
+      <!-- LOGOTIPO NOVO AQUI -->
+      <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" class="logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="/index.html" class="active">Início</a></li>
@@ -607,31 +605,6 @@
   <div class="hero-bg"></div>
   <div class="hero-glow-blue"></div>
   <div class="hero-stripe"></div>
-  <!-- CIRCUITOS HERO -->
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.45">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55"  r="2.5"/><circle class="cn" cx="718" cy="55"  r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="108" r="2"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22"  cy="68"  r="2.5"/><circle class="cn" cx="84"  cy="68"  r="2"/><circle class="cn" cx="84"  cy="32"  r="2.5"/><circle class="cn" cx="158" cy="32"  r="2"/><circle class="cn" cx="158" cy="94"  r="2.5"/><circle class="cn" cx="114" cy="94"  r="2"/>
-    <circle class="cn" cx="58"  cy="248" r="2.5"/><circle class="cn" cx="58"  cy="206" r="2"/><circle class="cn" cx="118" cy="206" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="225" r="2.5"/><circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="375" cy="48"  r="2.5"/><circle class="cn" cx="448" cy="48"  r="2"/><circle class="cn" cx="448" cy="90"  r="2.5"/><circle class="cn" cx="386" cy="90"  r="2"/><circle class="cn" cx="386" cy="130" r="2.5"/><circle class="cn" cx="428" cy="130" r="2"/>
-    <circle class="cn" cx="44"  cy="118" r="2.5"/><circle class="cn" cx="44"  cy="156" r="2"/><circle class="cn" cx="20"  cy="156" r="2.5"/><circle class="cn" cx="20"  cy="196" r="2"/><circle class="cn" cx="62"  cy="196" r="2.5"/><circle class="cn" cx="62"  cy="175" r="2"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="622" cy="248" r="2"/><circle class="cn" cx="700" cy="248" r="2.5"/><circle class="cn" cx="700" cy="295" r="2"/>
-    <circle class="cn" cx="552" cy="36"  r="2.5"/><circle class="cn" cx="552" cy="62"  r="2"/><circle class="cn" cx="508" cy="62"  r="2.5"/><circle class="cn" cx="508" cy="96"  r="2"/><circle class="cn" cx="575" cy="96"  r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="cp cp6" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
-  </svg>
   <div class="hero-content">
     <div class="hero-label">
       <div class="hero-label-bar"><span></span><span></span></div>
@@ -745,29 +718,6 @@
 
 <!-- CATEGORIAS -->
 <section class="cats-sec">
-  <!-- CIRCUITOS CATEGORIAS -->
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.35">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="55" r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="108" r="2"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="68" r="2"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="32" r="2"/><circle class="cn" cx="158" cy="94" r="2.5"/>
-    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="118" cy="206" r="2.5"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="225" r="2.5"/><circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="448" cy="48" r="2"/><circle class="cn" cx="386" cy="90" r="2"/><circle class="cn" cx="428" cy="130" r="2"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="622" cy="248" r="2"/><circle class="cn" cx="700" cy="248" r="2.5"/>
-    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="552" cy="62" r="2"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="cp cp6" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-  </svg>
   <div class="pilares-inner">
     <div class="cats-header">
       <div>
@@ -783,30 +733,21 @@
   </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<section class="dep-sec">
+  <div class="pilares-inner">
+    <div class="sec-tag reveal">O que dizem</div>
+    <div class="sec-title reveal reveal-delay-1">Clientes reais. <span class="accent-blue">Vendas</span> reais.</div>
+    <div class="dep-slider reveal reveal-delay-2">
+      <div class="dep-track" id="depTrack"></div>
+    </div>
+    <div class="dep-controls">
+      <div class="dep-dots" id="depDots"></div>
+    </div>
+  </div>
+</section>
 
 <section class="cta-section">
-  <!-- CIRCUITOS CTA -->
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.3">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="55" r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="94" r="2.5"/>
-    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="375" cy="48" r="2.5"/><circle class="cn" cx="448" cy="90" r="2.5"/><circle class="cn" cx="386" cy="130" r="2.5"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="700" cy="248" r="2.5"/>
-    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="cp cp6" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-  </svg>
   <div class="container">
     <div class="section-tag reveal">
       <div class="tag-bars"><span></span><span></span></div>
@@ -825,32 +766,10 @@
 </section>
 
 <footer>
-  <!-- CIRCUITOS FOOTER -->
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.25">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="94" r="2.5"/>
-    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="700" cy="248" r="2.5"/>
-    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
-    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="cp cp6" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-  </svg>
   <div class="footer-inner">
     <!-- LOGOTIPO NO RODAPÉ -->
-    <div style="margin-bottom:1.2rem;">
-      <picture>
-        <source srcset="IMPERSILVA_TECH_LOGO.png" type="image/png"/>
-        <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" style="height:35px;width:auto;display:block;margin-bottom:10px;" width="160" height="35" loading="lazy"/>
-      </picture>
+    <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);margin-bottom:1.2rem;white-space:nowrap;">
+       <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" style="height: 35px; width: auto; display: block; margin-bottom: 10px;">
     </div>
     <div style="display:flex;gap:0.7rem;margin-bottom:0;">
       <a href="https://www.facebook.com/impersilva" target="_blank" style="width:36px;height:36px;border-radius:8px;background:var(--charcoal);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray-lt);font-size:0.9rem;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#1877f2';this.style.borderColor='#1877f2';this.style.color='#fff'" onmouseout="this.style.background='var(--charcoal)';this.style.borderColor='var(--border)';this.style.color='var(--gray-lt)'"><i class="fa-brands fa-facebook-f"></i></a>
@@ -877,12 +796,7 @@
 <div id="mmOverlay" onclick="closeDrawer()"></div>
 <div id="mmDrawer">
   <div class="mmDrawer-head">
-    <span class="mm-title">
-      <picture>
-        <source srcset="IMPERSILVA_TECH_LOGO.png" type="image/png"/>
-        <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" style="height:28px;width:auto;display:block;" width="130" height="28" loading="lazy"/>
-      </picture>
-    </span>
+    <span class="mm-title"><img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH"></span>
     <button class="mm-close" onclick="closeDrawer()">&#10005;</button>
   </div>
   <nav>
@@ -994,6 +908,34 @@ function goCat(i){
 }
 function moveCat(dir){goCat(catIdx+dir);}
 
+// ── DEPOIMENTOS SLIDER ────────────────────────────────────
+const DEP_FB=[
+  {nome:'Maria Fernandes',negocio:'Loja de Moda — Huambo',texto:'A IMPERSILVA TECH criou a minha loja online. Em poucos meses as minhas vendas duplicaram e não preciso mais de loja física.'},
+  {nome:'Carlos Mendes',negocio:'Restaurante — Benguela',texto:'Criaram o meu site de pedidos. Agora os clientes encomendam sem se deslocar. Revolucionou completamente o meu negócio.'},
+  {nome:'Ana Lopes',negocio:'Serviços — Huíla',texto:'Sempre quis vender meus produtos, mas não tinha como. Com a loja online que eles fizeram, agora vendo para todo o país.'},
+];
+let depIdx=0,depTimer,depData=[];
+function renderDep(deps){
+  depData=deps;
+  const track=document.getElementById('depTrack');
+  const dots=document.getElementById('depDots');
+  track.innerHTML=deps.map((d,i)=>{
+    return`<div class="dep-item"><div class="dep-quote">"</div><p class="dep-txt">${d.texto}</p>
+      <div class="dep-author"><div class="dep-av"><i class="fa-solid fa-user"></i></div>
+      <div><div class="dep-name">${d.nome}</div><div class="dep-role">${d.negocio||''}</div></div></div></div>`;
+  }).join('');
+  dots.innerHTML=deps.map((_,i)=>`<div class="ddot${i===0?' active':''}" onclick="goDep(${i})"></div>`).join('');
+  clearInterval(depTimer);
+  depTimer=setInterval(()=>moveDep(1),5000);
+}
+function goDep(i){
+  depIdx=(i+depData.length)%depData.length;
+  document.getElementById('depTrack').style.transform=`translateX(-${depIdx*100}%)`;
+  document.querySelectorAll('.ddot').forEach((d,j)=>d.classList.toggle('active',j===depIdx));
+  clearInterval(depTimer);depTimer=setInterval(()=>moveDep(1),5000);
+}
+function moveDep(dir){goDep(depIdx+dir);}
+
 // ── NOTÍCIAS SLIDER ───────────────────────────────────────
 const NEWS_FB=[
   {label:'Novidade',titulo:'Lojas online prontas em 7 dias para qualquer negócio angolano',data:'Jun 2025',cor1:'#050d1f',cor2:'#0f2060',icon:'fa-rocket'},
@@ -1035,6 +977,7 @@ function goNews(i){
 // ── CARREGAR DADOS ────────────────────────────────────────
 async function carregarDados(){
   renderCatsSlider(CATS);
+  renderDep(DEP_FB);
   renderNews(NEWS_FB);
   try{
     const d=await fetch(API+'/api/site/home',{signal:AbortSignal.timeout(5000)}).then(r=>r.ok?r.json():null);
@@ -1048,6 +991,7 @@ async function carregarDados(){
       if(t&&t.desc)document.getElementById('techDesc').textContent=t.desc;
     }
     if(d.categorias&&d.categorias.length)renderCatsSlider(d.categorias);
+    if(d.depoimentos&&d.depoimentos.length)renderDep(d.depoimentos);
     if(d.noticias&&d.noticias.length)renderNews(d.noticias);
     if(d.cta&&d.cta.subtitulo)document.getElementById('ctaSub').textContent=d.cta.subtitulo;
     if(d.footer&&d.footer.whatsapp){
