@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>Sobre Nós — IMPERSILVA TECH</title>
+<meta name="description" content="Conheça a IMPERSILVA TECH — criamos lojas online e sites profissionais para empreendedores angolanos. A nossa história, missão e equipa."/>
+<!-- Open Graph -->
+<meta property="og:type"        content="website"/>
+<meta property="og:locale"      content="pt_AO"/>
+<meta property="og:site_name"   content="IMPERSILVA TECH"/>
+<meta property="og:title"       content="Sobre Nós — IMPERSILVA TECH"/>
+<meta property="og:description" content="Conheça a IMPERSILVA TECH — criamos lojas online e sites profissionais para empreendedores angolanos. A nossa história, missão e equipa."/>
+<meta property="og:url"         content="https://impersilva.ao/sobre.html"/>
+<meta property="og:image"       content="https://impersilva.ao/og-cover.jpg"/>
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image"/>
+<meta name="twitter:title"       content="Sobre Nós — IMPERSILVA TECH"/>
+<meta name="twitter:description" content="Conheça a IMPERSILVA TECH — criamos lojas online e sites profissionais para empreendedores angolanos."/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="/config.js"></script>
+<style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Times New Roman', Times, serif; }
+    body, body * { font-family: inherit; }
+
+    :root {
+      --black:      #0a0a0c;
+      --dark:       #121214;
+      --charcoal:   #1e1e22;
+      --charcoal-lt:#2a2a30;
+      --silver:     #9ba4b5;
+      --silver-lt:  #d1d5db;
+      --blue:       #0a66c2;
+      --blue-lt:    #1d8cf8;
+      --blue-dim:   rgba(10, 102, 194, 0.12);
+      --white:      #ffffff;
+      --off:        #f0f0f0;
+      --gray:       #888896;
+      --gray-lt:    #c0c0cc;
+      --divider:    rgba(255,255,255,0.07);
+      --border:     rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif !important;
+      background: var(--dark);
+      color: var(--white);
+      overflow-x: hidden;
+      padding-top: 64px;
+    }
+
+/* ══════════════════════════════════════
+       NAVBAR
+   ══════════════════════════════════════ */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(10,10,12,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--divider);
+    }
+    .navbar-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo-link { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; text-decoration: none; line-height: 1; }
+    .logo-img {
+      height: 48px; width: auto; max-width: 220px;
+      object-fit: contain; display: block;
+      mix-blend-mode: screen;
+      filter: contrast(1.6) brightness(1.1);
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.1rem; list-style: none; }
+    .nav-links a {
+      color: var(--gray-lt); text-decoration: none;
+      font-size: 0.85rem; font-weight: 400; letter-spacing: 0.03em;
+      padding: 0.5rem 0.9rem; border-radius: 5px; transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+    .nav-links a.active { color: var(--white); }
+    .nav-cta {
+      background: var(--blue) !important; color: var(--white) !important;
+      font-weight: 600 !important; padding: 0.5rem 1.3rem !important;
+      border-radius: 5px !important; letter-spacing: 0.04em !important;
+    }
+    .nav-cta:hover { background: var(--blue-lt) !important; box-shadow: 0 0 15px rgba(10, 102, 194, 0.4); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.3rem; }
+    @media (max-width: 860px) { .hamburger { display: flex; } .nav-links { display: none !important; } }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ══════════════════════════════════════
+       HERO
+   ══════════════════════════════════════ */
+    .hero { position: relative; display: flex; align-items: flex-start; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; background: var(--dark); }
+    .hero-bg::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; left: -200px; bottom: -100px;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(10, 102, 194, 0.15) 0%, transparent 65%);
+    }
+    .hero-glow-blue {
+      position: absolute; right: -150px; top: -150px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(29, 140, 248, 0.10) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-stripe {
+      position: absolute; top: 0; right: 25%; width: 3px; height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(155, 164, 181, 0.3), transparent);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+      padding-top: 3.5rem; padding-bottom: 4rem;
+    }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--silver); margin-bottom: 1.6rem;
+    }
+    .hero-label-bar { display: flex; gap: 3px; }
+    .hero-label-bar span { display: block; width: 18px; height: 3px; border-radius: 2px; }
+    .hero-label-bar span:first-child { background: var(--blue); }
+    .hero-label-bar span:last-child  { background: var(--silver); }
+    .hero-title {
+      font-size: clamp(2rem, 9.5vw, 5.2rem); font-weight: 900; line-height: 1.05;
+      letter-spacing: -0.02em; color: var(--white); margin-bottom: 1.2rem;
+      word-break: break-word; overflow-wrap: break-word;
+    }
+    .hero-title .accent-blue { color: var(--blue-lt); }
+    .hero-slogan {
+      font-size: 1.05rem; font-weight: 300; font-style: italic;
+      color: var(--silver-lt); margin-bottom: 1.4rem;
+      padding-left: 1rem; border-left: 3px solid var(--blue);
+    }
+    .hero-desc {
+      font-size: 0.97rem; font-weight: 300; color: var(--gray); line-height: 1.85;
+      margin-bottom: 2.5rem; max-width: 600px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-blue {
+      background: var(--blue); color: var(--white);
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.85rem 2rem; border: none; border-radius: 4px;
+      cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.22s;
+    }
+    .btn-blue:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,102,194,0.4); }
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.85rem 2rem; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 4px;
+      cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.22s;
+    }
+    .btn-ghost:hover { border-color: var(--blue-lt); color: var(--blue-lt); transform: translateY(-2px); }
+
+    .scroll-hint-inline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--gray); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      margin-top: 1.8rem; margin-bottom: 0.2rem;
+      animation: fadeUpDown 2.5s ease-in-out infinite;
+    }
+    @keyframes fadeUpDown { 0%, 100% { opacity: 0.5; transform: translateY(0); } 50% { opacity: 1; transform: translateY(4px); } }
+
+/* ══ REVEAL ══ */
+    .reveal { opacity: 1; transform: none; }
+    .js-ready .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .js-ready .reveal.visible { opacity: 1; transform: none; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ══ CIRCUIT ANIMATION ══ */
+    .circuit-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .ct  { fill: none; stroke: rgba(50, 150, 255, 0.16); stroke-width: 1.5; }
+    .cn  { fill: rgba(60, 170, 255, 0.38); }
+    .cp  { fill: none; stroke-linecap: round; stroke-width: 2; stroke: rgba(140, 225, 255, 0.95); stroke-dasharray: 20 900; }
+    @keyframes cFlow { from { stroke-dashoffset: 920; } to { stroke-dashoffset: 0; } }
+    .cp1 { animation: cFlow 4.1s linear infinite; }
+    .cp2 { animation: cFlow 5.3s linear infinite 1.4s; }
+    .cp3 { animation: cFlow 3.8s linear infinite 0.7s; }
+    .cp4 { animation: cFlow 4.7s linear infinite 2.2s; }
+    .cp5 { animation: cFlow 3.4s linear infinite 0.3s; }
+    .cp6 { animation: cFlow 5.8s linear infinite 1.9s; }
+
+/* ══ SECTION BASE (igual ao index) ══ */
+    .pilares-sec { padding: 80px 0; background: var(--dark); position: relative; overflow: hidden; }
+    .pilares-sec.is-black { background: var(--black); }
+    .pilares-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .sec-tag { font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:12px;display:flex;align-items:center;gap:8px }
+    .sec-tag::before { content:'';width:18px;height:1.5px;background:var(--blue);flex-shrink:0 }
+    .sec-title { font-weight:900;font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:40px }
+    .sec-title .accent-blue { color:var(--blue-lt) }
+    .sec-title em { font-style:italic }
+    .sec-desc { font-size:.9rem;color:var(--gray);font-weight:300;margin-bottom:32px;max-width:560px }
+
+/* ══ NEWS CARD (igual ao index) ══ */
+    .news-card { border-radius:14px;overflow:hidden;position:relative;height:260px;margin-top:2.5rem;cursor:pointer }
+    .news-slide { display:none;position:absolute;inset:0 }
+    .news-slide.active { display:block }
+    .news-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover }
+    .news-gradient { position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.25) 60%,transparent 100%) }
+    .news-placeholder { position:absolute;inset:0;display:flex;align-items:center;justify-content:center }
+    .news-body { position:absolute;bottom:0;left:0;right:0;padding:20px }
+    .news-badge { font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-lt);margin-bottom:6px }
+    .news-titulo { font-size:.95rem;font-weight:700;line-height:1.35;margin-bottom:4px }
+    .news-data { font-size:.65rem;color:rgba(255,255,255,.4) }
+    .news-dots { position:absolute;bottom:14px;right:16px;display:flex;gap:5px;z-index:10 }
+    .ndot { width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:.25s }
+    .ndot.active { background:var(--blue);width:16px;border-radius:3px }
+    @media(min-width:861px){ .news-card { margin-top: 2.5rem; height: 420px; } }
+
+/* ══ HISTÓRIA ══ */
+    .historia-grid { display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center }
+    .historia-txt p { font-size:.92rem;color:var(--gray);line-height:1.9;font-weight:300;margin-bottom:1.2rem }
+    .historia-txt p:last-child { margin-bottom:0 }
+    .historia-txt strong { color:var(--white);font-weight:600 }
+    .historia-visual { display:flex;flex-direction:column;gap:14px }
+    .hist-card { background:var(--charcoal);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start }
+    .hist-card-bar { width:3px;border-radius:3px;align-self:stretch;flex-shrink:0 }
+    .bar-b { background:var(--blue) }
+    .bar-s { background:var(--silver) }
+    .hist-year { font-weight:900;font-size:1.5rem;color:var(--gray);line-height:1;margin-bottom:4px }
+    .hist-h { font-size:.85rem;font-weight:700;margin-bottom:4px }
+    .hist-p { font-size:.76rem;color:var(--gray);line-height:1.55;font-weight:300 }
+
+/* ══ MISSÃO VISÃO VALORES ══ */
+    .mvv-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:18px }
+    .mvv-card { background:var(--charcoal);border:1px solid var(--border);border-radius:16px;padding:30px 28px;position:relative;overflow:hidden;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease }
+    .mvv-card:hover { transform:translateY(-6px) }
+    .mvv-card::before { content:'';position:absolute;top:0;left:0;right:0;height:3px }
+    .mvv-card::after { content:'';position:absolute;top:-40%;right:-30%;width:70%;height:70%;border-radius:50%;pointer-events:none;opacity:.5;transition:opacity .3s ease }
+    .mvv-card.mv { border-color:rgba(10,102,194,.18) }
+    .mvv-card.mv::before { background:linear-gradient(to right,var(--blue),var(--blue-lt)) }
+    .mvv-card.mv::after { background:radial-gradient(circle,rgba(10,102,194,.16) 0%,transparent 70%) }
+    .mvv-card.mv:hover { border-color:rgba(10,102,194,.45); box-shadow:0 14px 36px rgba(10,102,194,.16) }
+    .mvv-card.vis { border-color:rgba(29,140,248,.18) }
+    .mvv-card.vis::before { background:linear-gradient(to right,var(--blue-lt),#7cc4ff) }
+    .mvv-card.vis::after { background:radial-gradient(circle,rgba(29,140,248,.16) 0%,transparent 70%) }
+    .mvv-card.vis:hover { border-color:rgba(29,140,248,.45); box-shadow:0 14px 36px rgba(29,140,248,.16) }
+    .mvv-card.val { border-color:rgba(155,164,181,.2) }
+    .mvv-card.val::before { background:linear-gradient(to right,var(--silver),var(--silver-lt)) }
+    .mvv-card.val::after { background:radial-gradient(circle,rgba(155,164,181,.18) 0%,transparent 70%) }
+    .mvv-card.val:hover { border-color:rgba(155,164,181,.5); box-shadow:0 14px 36px rgba(155,164,181,.14) }
+    .mvv-icon {
+      position:relative;z-index:1;
+      width:46px;height:46px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.15rem;margin-bottom:18px;
+    }
+    .mv .mvv-icon { background:var(--blue-dim);color:var(--blue-lt) }
+    .vis .mvv-icon { background:rgba(124,196,255,.12);color:#7cc4ff }
+    .val .mvv-icon { background:rgba(155,164,181,.14);color:var(--silver-lt) }
+    .mvv-label { position:relative;z-index:1;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px }
+    .mv .mvv-label { color:var(--blue-lt) }
+    .vis .mvv-label { color:#7cc4ff }
+    .val .mvv-label { color:var(--silver-lt) }
+    .mvv-sub { position:relative;z-index:1;font-size:.68rem;color:var(--gray);margin-bottom:16px;font-style:italic;font-weight:300 }
+    .mvv-h { position:relative;z-index:1;font-weight:900;font-size:1.25rem;letter-spacing:-.01em;margin-bottom:12px;line-height:1.25 }
+    .mvv-p { position:relative;z-index:1;font-size:.82rem;color:var(--gray);line-height:1.7;font-weight:300;margin-bottom:14px }
+    .mvv-values { position:relative;z-index:1;display:flex;flex-direction:column;gap:7px }
+    .mvv-value { display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--gray-lt);font-weight:300 }
+    .mvv-value i { font-size:.65rem;color:var(--blue-lt);flex-shrink:0 }
+
+/* ══ EQUIPA (CAROUSEL — mesmo motor do index) ══ */
+    .cats-slider { position:relative;overflow:hidden;border-radius:16px;width:100% }
+    .cats-track { display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);will-change:transform }
+    .cat { min-width:100%;width:100%;box-sizing:border-box;border:none;border-radius:16px;cursor:default;color:#fff;position:relative;overflow:hidden;height:480px;display:flex;align-items:flex-end;background:var(--charcoal);flex-shrink:0 }
+    .cat-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform 6s ease }
+    .cat.active .cat-bg { transform:scale(1.06) }
+    .cat-overlay { position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.3) 55%,transparent 100%) }
+    .cat-body { position:relative;z-index:2;padding:32px;width:100% }
+    .membro-cargo { font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-lt);margin-bottom:10px }
+    .membro-nome { font-weight:900;font-size:1.8rem;letter-spacing:-.01em;margin-bottom:10px }
+    .membro-bio { font-size:.88rem;color:rgba(255,255,255,.65);font-weight:300;line-height:1.7;max-width:560px;margin-bottom:16px }
+    .membro-social { display:flex;gap:8px }
+    .membro-social a { width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:var(--gray-lt);text-decoration:none;font-size:.85rem;transition:.2s }
+    .membro-social a:hover { background:var(--blue);border-color:var(--blue);color:#fff }
+    .cats-nav { display:flex;align-items:center;justify-content:space-between;margin-top:14px }
+    .cats-dots { display:flex;gap:5px;flex-wrap:wrap }
+    .cdot { width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:.25s }
+    .cdot.active { background:var(--blue);width:18px;border-radius:3px }
+    .cats-arrows { display:flex;gap:8px }
+    .cat-arr { width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--gray-lt);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:.2s }
+    .cat-arr:hover { background:var(--blue);border-color:var(--blue);color:#fff }
+    @media(max-width:860px){ .cat{ height:420px } }
+    @media(max-width:540px){ .cat{ height:380px } .membro-nome{ font-size:1.3rem } .membro-bio{ font-size:.8rem } }
+
+/* ══ FAQ (igual ao index) ══ */
+    .faq-sec { padding: 80px 0; background: var(--black); position: relative; overflow: hidden; }
+    .faq-list { display: flex; flex-direction: column; max-width: 820px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none; text-align: left;
+      padding: 1.3rem 0; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      color: var(--white); font-size: 0.97rem; font-weight: 600;
+      font-family: 'Times New Roman', Times, serif; transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--blue-lt); }
+    .faq-q.active { color: var(--blue-lt); }
+    .faq-icon {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      background: var(--charcoal); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: var(--gray);
+      transition: background 0.25s, border-color 0.25s, transform 0.3s;
+    }
+    .faq-q.active .faq-icon { background: var(--blue); border-color: var(--blue); color: var(--white); transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.38s ease; }
+    .faq-a.open { max-height: 400px; }
+    .faq-a-inner { padding-bottom: 1.3rem; font-size: 0.88rem; color: var(--gray); line-height: 1.85; font-weight: 300; }
+    @media(max-width:860px){ .faq-sec { padding: 40px 0; } .faq-q { font-size: 0.92rem; padding: 1.1rem 0; } }
+
+/* ══ CTA (igual ao index) ══ */
+    .cta-section { background: var(--charcoal); border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); padding: 5.5rem 0; position: relative; overflow: hidden; text-align: center; }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(10,102,194,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(155,164,181,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-section .container { position: relative; max-width:1200px;margin:0 auto;padding:0 1.5rem; }
+    .section-tag { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; }
+    .tag-bars { display: flex; gap: 3px; }
+    .tag-bars span { display: block; width: 16px; height: 2px; border-radius: 2px; }
+    .tag-bars span:first-child { background: var(--blue); }
+    .tag-bars span:last-child  { background: var(--silver); }
+    .cta-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: var(--white); margin-bottom: 0.8rem; }
+    .cta-title .accent-blue { color: var(--blue-lt); }
+    .cta-desc { font-size: 1rem; color: var(--gray); font-weight: 300; margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ══ FOOTER ══ */
+    footer { background: var(--black); border-top: 1px solid var(--divider); padding: 4rem 0 2rem; position: relative; overflow: hidden; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .footer-divider { height: 1px; background: var(--divider); margin: 2.5rem 0 1.5rem; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.73rem; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom a { color: var(--blue-lt); text-decoration: none; }
+
+/* ══ WPP FLOAT ══ */
+    .wpp-float {
+      position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 999;
+      width: 54px; height: 54px; border-radius: 50%; background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.5rem;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.38);
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: wppPulse 3s ease-in-out infinite;
+    }
+    .wpp-float:hover { transform: scale(1.1); }
+    @keyframes wppPulse { 0%, 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.38); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.6), 0 0 0 8px rgba(37,211,102,0.07); } }
+
+/* ══ DRAWER MOBILE ══ */
+    #mmOverlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 998; backdrop-filter: blur(3px); }
+    #mmOverlay.active { display: block; }
+    #mmDrawer {
+      position: fixed; top: 0; right: 0; width: 72%; max-width: 280px;
+      height: auto; max-height: 100dvh; background: var(--black); z-index: 999;
+      transform: translateX(100%); transition: transform .3s cubic-bezier(.4,0,.2,1);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column; border-bottom-left-radius: 16px; overflow: hidden;
+    }
+    #mmDrawer.active { transform: translateX(0); }
+    .mmDrawer-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px 12px; border-bottom: 1px solid rgba(255,255,255,.07); background: rgba(255,255,255,.02); flex-shrink: 0; }
+    .mmDrawer-head .mm-title { font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.25); display: flex; align-items: center; }
+    .mmDrawer-head .mm-title img { height: 28px; width: auto; display: block; }
+    .mmDrawer-head .mm-close { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.5); font-size: .9rem; cursor: pointer; line-height: 1; width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .mmDrawer-head .mm-close:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+    #mmDrawer nav { display: flex; flex-direction: column; padding: 14px 0 6px; overflow-y: auto; }
+    #mmDrawer nav a { text-decoration: none; font-size: .92rem; font-weight: 600; letter-spacing: .04em; padding: 11px 18px; margin: 6px 14px; border-radius: 6px; border: none; transition: all .15s; display: flex; align-items: center; gap: 8px; color: #fff; background: var(--charcoal); }
+    #mmDrawer nav a:hover { background: var(--charcoal-lt); padding-left: 24px; }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:860px){
+  .logo-img { height: 42px !important; width: auto !important; max-width: 260px !important; margin-top: 0 !important; object-fit: contain !important; }
+  .navbar-inner { height: 64px; }
+  body { padding-top: 64px; }
+  .hero { min-height: auto; padding-bottom: 0; }
+  .hero-content { padding-top: 1.2rem !important; padding-bottom: 2rem; }
+  .hero-title { font-size: clamp(2rem, 9vw, 3.2rem) !important; margin-bottom: 0.8rem; }
+  .hero-desc { margin-bottom: 1.5rem; }
+  .hero-btns { margin-bottom: 1rem; }
+  .scroll-hint-inline { display: none; margin: 0; }
+  .news-card { margin-top: 1.2rem; height: 300px; }
+  .pilares-sec { padding: 40px 0 !important; }
+  .sec-title { margin-bottom: 20px !important; }
+  .historia-grid { grid-template-columns:1fr;gap:32px }
+  .mvv-grid { grid-template-columns:1fr }
+  .cta-section { padding: 2.5rem 0 !important; }
+  .cta-title { margin-bottom: 0.5rem !important; }
+  .cta-desc { margin-bottom: 1.5rem !important; }
+  footer { padding: 2.5rem 0 1.5rem !important; }
+}
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="logo-link" href="/index.html">
+      <picture>
+        <source srcset="IMPERSILVA_TECH_LOGO.png" type="image/png"/>
+        <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" class="logo-img" width="220" height="48" fetchpriority="high"/>
+      </picture>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Início</a></li>
+      <li><a href="/sobre.html" class="active">Sobre</a></li>
+      <li><a href="/tech.html">Tech</a></li>
+      <li><a href="/portfolio.html">Portfólio</a></li>
+      <li><a href="/contacto.html">Contacto</a></li>
+      <li><a href="/verificar-site.html"><i class="fa-solid fa-user" style="font-size:.75rem;opacity:.7"></i> Portal</a></li>
+      <li><a href="/orcamento.html" class="nav-cta">Orçamento</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow-blue"></div>
+  <div class="hero-stripe"></div>
+  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.45">
+    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
+    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
+    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
+    <path class="ct" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
+    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
+    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
+    <circle class="cn" cx="788" cy="55"  r="2.5"/><circle class="cn" cx="718" cy="55"  r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="108" r="2"/><circle class="cn" cx="768" cy="168" r="2.5"/>
+    <circle class="cn" cx="22"  cy="68"  r="2.5"/><circle class="cn" cx="84"  cy="68"  r="2"/><circle class="cn" cx="84"  cy="32"  r="2.5"/><circle class="cn" cx="158" cy="32"  r="2"/><circle class="cn" cx="158" cy="94"  r="2.5"/><circle class="cn" cx="114" cy="94"  r="2"/>
+    <circle class="cn" cx="58"  cy="248" r="2.5"/><circle class="cn" cx="58"  cy="206" r="2"/><circle class="cn" cx="118" cy="206" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
+    <circle class="cn" cx="748" cy="225" r="2.5"/><circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
+    <circle class="cn" cx="375" cy="48"  r="2.5"/><circle class="cn" cx="448" cy="48"  r="2"/><circle class="cn" cx="448" cy="90"  r="2.5"/><circle class="cn" cx="386" cy="90"  r="2"/><circle class="cn" cx="386" cy="130" r="2.5"/><circle class="cn" cx="428" cy="130" r="2"/>
+    <circle class="cn" cx="44"  cy="118" r="2.5"/><circle class="cn" cx="44"  cy="156" r="2"/><circle class="cn" cx="20"  cy="156" r="2.5"/><circle class="cn" cx="20"  cy="196" r="2"/><circle class="cn" cx="62"  cy="196" r="2.5"/><circle class="cn" cx="62"  cy="175" r="2"/>
+    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="622" cy="248" r="2"/><circle class="cn" cx="700" cy="248" r="2.5"/><circle class="cn" cx="700" cy="295" r="2"/>
+    <circle class="cn" cx="552" cy="36"  r="2.5"/><circle class="cn" cx="552" cy="62"  r="2"/><circle class="cn" cx="508" cy="62"  r="2.5"/><circle class="cn" cx="508" cy="96"  r="2"/><circle class="cn" cx="575" cy="96"  r="2.5"/>
+    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
+    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
+    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
+    <path class="cp cp6" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-label reveal">
+      <div class="hero-label-bar"><span></span><span></span></div>
+      Quem Somos
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1" id="sobreHeroTitle">
+      Quem somos<br>e o que nos<br><span class="accent-blue">move</span>
+    </h1>
+    <p class="hero-slogan reveal reveal-delay-2" id="sobreSlogan">"Entre nós, fluem oportunidades."</p>
+    <p class="hero-desc reveal reveal-delay-2" id="sobreHeroSub">Somos uma plataforma self-service angolana: o próprio cliente cria a sua loja a partir de templates, personaliza-a à sua medida e, depois de publicar, ela fica disponível em menos de 5 minutos — sem técnicos, sem complicações.</p>
+    <div class="hero-btns reveal reveal-delay-3">
+      <a href="#equipa" class="btn-blue"><i class="fa-solid fa-users"></i> Conhecer a equipa</a>
+      <a href="#historia" class="btn-ghost">A nossa história</a>
+    </div>
+    <div class="scroll-hint-inline reveal reveal-delay-3">↓ Explorar</div>
+    <div class="news-card reveal reveal-delay-4" id="newsCard">
+      <div id="newsSlides"></div>
+      <div class="news-dots" id="newsDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="pilares-sec is-black" id="historia">
+  <div class="pilares-inner">
+    <div class="sec-tag reveal">A nossa origem</div>
+    <div class="sec-title reveal reveal-delay-1">De uma <em>ideia</em><br>a uma <span class="accent-blue">plataforma</span></div>
+    <div class="historia-grid">
+      <div class="historia-txt reveal reveal-delay-1" id="historiaTxt">
+        <p>A <strong>IMPERSILVA TECH</strong> nasceu para responder a um problema muito real em Angola: hoje é cada vez mais difícil e caro ter uma loja física, devido aos elevados custos de arrendamento e a outros fatores. Uma loja online tornou-se a forma mais acessível de qualquer pessoa começar o seu próprio negócio.</p>
+        <p>Desenvolvemos uma plataforma <strong>self-service</strong>: o próprio cliente cria a sua loja a partir de templates prontos, personaliza cores, produtos e informações à sua medida, e publica — disponível em <strong>menos de 5 minutos</strong>. Trabalhamos com lojas para qualquer tipo de produto, dos mais variados sectores.</p>
+        <p>A nossa missão é, acima de tudo, apoiar jovens angolanos que querem entrar no empreendedorismo. Acreditamos que a tecnologia deve abrir portas, e por isso construímos uma ferramenta simples, rápida e acessível, feita para a realidade angolana.</p>
+      </div>
+      <div class="historia-visual reveal reveal-delay-2" id="historiaTimeline">
+        <!-- preenchido por JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO VISÃO VALORES -->
+<section class="pilares-sec" id="visao">
+  <div class="pilares-inner">
+    <div class="sec-tag reveal">Identidade da marca</div>
+    <div class="sec-title reveal reveal-delay-1">Missão, <span class="accent-blue">visão</span><br>e valores</div>
+    <div class="mvv-grid reveal reveal-delay-2" id="mvvGrid">
+      <!-- preenchido por JS -->
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPA (CAROUSEL) -->
+<section class="pilares-sec is-black" id="equipa">
+  <div class="pilares-inner">
+    <div class="sec-tag reveal">As pessoas por trás</div>
+    <div class="sec-title reveal reveal-delay-1">A nossa <span class="accent-blue">equipa</span></div>
+    <p class="sec-desc reveal reveal-delay-1" id="equipaDesc">Uma equipa tecnológica dedicada a transformar negócios angolanos em lojas online de sucesso.</p>
+    <div class="cats-slider reveal reveal-delay-2">
+      <div class="cats-track" id="equipaTrack"></div>
+    </div>
+    <div class="cats-nav">
+      <div class="cats-dots" id="equipaDots"></div>
+      <div class="cats-arrows">
+        <button class="cat-arr" onclick="moveEquipa(-1)" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="cat-arr" onclick="moveEquipa(1)" aria-label="Seguinte"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.3">
+    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
+    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
+    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
+    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
+    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="114" cy="94" r="2"/>
+    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="118" cy="206" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
+    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
+    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="96" r="2.5"/>
+    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="cp cp6" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
+  </svg>
+  <div class="pilares-inner">
+    <div class="sec-tag reveal">Dúvidas frequentes</div>
+    <div class="sec-title reveal reveal-delay-1">Per<span class="accent-blue">guntas</span> & Respostas</div>
+    <div class="faq-list reveal reveal-delay-2" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.3">
+    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
+    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
+    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
+    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
+    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
+    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="55" r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
+    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="94" r="2.5"/>
+    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
+    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
+    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="700" cy="248" r="2.5"/>
+    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
+    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
+    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
+    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
+    <path class="cp cp6" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
+  </svg>
+  <div class="container">
+    <div class="section-tag reveal">
+      <div class="tag-bars"><span></span><span></span></div>
+      Faça parte
+    </div>
+    <h2 class="cta-title reveal reveal-delay-1">Faça parte da<br>nossa <span class="accent-blue">história</span></h2>
+    <p class="cta-desc reveal reveal-delay-2" id="sobreCtaSub">Acede ao portal agora e cria a tua loja em minutos. O teu negócio digital começa hoje — sem técnicos, sem complicações.</p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="/verificar-site.html" class="btn-blue"><i class="fa-solid fa-rocket"></i> Criar no Portal</a>
+      <a href="/contacto.html" class="btn-ghost">Falar Connosco</a>
+      <a href="/portfolio.html" class="btn-ghost" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#c0c0cc">Ver Portfólio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.25">
+    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
+    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
+    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
+    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
+    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
+    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="94" r="2.5"/>
+    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="198" cy="272" r="2.5"/>
+    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
+    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="700" cy="248" r="2.5"/>
+    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
+    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
+    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
+    <path class="cp cp5" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
+    <path class="cp cp6" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
+  </svg>
+  <div class="footer-inner">
+    <div style="margin-bottom:1.2rem;">
+      <picture>
+        <source srcset="IMPERSILVA_TECH_LOGO.png" type="image/png"/>
+        <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" style="height:35px;width:auto;display:block;margin-bottom:10px;" width="160" height="35" loading="lazy"/>
+      </picture>
+    </div>
+    <div style="display:flex;gap:0.7rem;margin-bottom:0;">
+      <a href="https://www.facebook.com/impersilva" target="_blank" style="width:36px;height:36px;border-radius:8px;background:var(--charcoal);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray-lt);font-size:0.9rem;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#1877f2';this.style.borderColor='#1877f2';this.style.color='#fff'" onmouseout="this.style.background='var(--charcoal)';this.style.borderColor='var(--border)';this.style.color='var(--gray-lt)'"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/impersilva" target="_blank" style="width:36px;height:36px;border-radius:8px;background:var(--charcoal);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray-lt);font-size:0.9rem;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#e1306c';this.style.borderColor='#e1306c';this.style.color='#fff'" onmouseout="this.style.background='var(--charcoal)';this.style.borderColor='var(--border)';this.style.color='var(--gray-lt)'"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/impersilva" target="_blank" style="width:36px;height:36px;border-radius:8px;background:var(--charcoal);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray-lt);font-size:0.9rem;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#0a66c2';this.style.borderColor='#0a66c2';this.style.color='#fff'" onmouseout="this.style.background='var(--charcoal)';this.style.borderColor='var(--border)';this.style.color='var(--gray-lt)'"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://wa.me/244954288128" target="_blank" style="width:36px;height:36px;border-radius:8px;background:var(--charcoal);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gray-lt);font-size:0.9rem;text-decoration:none;transition:all .2s;" onmouseover="this.style.background='#25d366';this.style.borderColor='#25d366';this.style.color='#fff'" onmouseout="this.style.background='var(--charcoal)';this.style.borderColor='var(--border)';this.style.color='var(--gray-lt)'"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© <span id="yr"></span> IMPERSILVA TECH. Todos os direitos reservados.</span>
+      <span>Desenvolvido por <a href="/tech.html">IMPERSILVA TECH</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/244954288128?text=Ol%C3%A1%20IMPERSILVA%20TECH!%20Gostaria%20de%20saber%20mais%20sobre%20a%20cria%C3%A7%C3%A3o%20de%20uma%20loja%20online." target="_blank" class="wpp-float" title="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.215c-.073.266.162.505.43.437l5.49-1.453A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.031-1.388l-.361-.214-3.741.99 1.003-3.648-.235-.374A9.791 9.791 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
+  </svg>
+</a>
+
+<!-- DRAWER MOBILE -->
+<div id="mmOverlay" onclick="closeDrawer()"></div>
+<div id="mmDrawer">
+  <div class="mmDrawer-head">
+    <span class="mm-title">
+      <picture>
+        <source srcset="IMPERSILVA_TECH_LOGO.png" type="image/png"/>
+        <img src="IMPERSILVA_TECH_LOGO.jpg" alt="IMPERSILVA TECH" style="height:28px;width:auto;display:block;" width="130" height="28" loading="lazy"/>
+      </picture>
+    </span>
+    <button class="mm-close" onclick="closeDrawer()">&#10005;</button>
+  </div>
+  <nav>
+    <a href="/index.html"><i class="fa-solid fa-house" style="width:14px;opacity:.5;font-size:.8rem"></i>Início</a>
+    <a href="/tech.html"><i class="fa-solid fa-code" style="width:14px;opacity:.5;font-size:.8rem"></i>Tech</a>
+    <a href="/portfolio.html"><i class="fa-solid fa-briefcase" style="width:14px;opacity:.5;font-size:.8rem"></i>Portfólio</a>
+    <a href="/sobre.html"><i class="fa-solid fa-circle-info" style="width:14px;opacity:.5;font-size:.8rem"></i>Sobre</a>
+    <a href="/contacto.html"><i class="fa-solid fa-envelope" style="width:14px;opacity:.5;font-size:.8rem"></i>Contacto</a>
+    <a href="/orcamento.html"><i class="fa-solid fa-file-invoice" style="width:14px;opacity:.5;font-size:.8rem"></i>Orçamento</a>
+    <a href="/verificar-site.html"><i class="fa-solid fa-user" style="width:14px;opacity:.5;font-size:.8rem"></i>Portal do Cliente</a>
+  </nav>
+</div>
+
+<script>
+const API=(window.IMPERSILVA&&window.IMPERSILVA.api_url)||(window.SITE_CONFIG&&window.SITE_CONFIG.api_url)||'https://impersilva-ao.3miliosilva.workers.dev';
+
+// ── REVEAL ────────────────────────────────────────────────
+document.documentElement.classList.add('js-ready');
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.hero .reveal, .hero-content .reveal').forEach((el,i)=>{
+  setTimeout(()=>el.classList.add('visible'), i*100);
+});
+
+// ── NAV SCROLL ────────────────────────────────────────────
+const navbar=document.querySelector('.navbar');
+window.addEventListener('scroll',()=>{navbar.style.borderBottomColor=window.scrollY>60?'rgba(10,102,194,0.2)':'rgba(255,255,255,0.07)';},{passive:true});
+
+// ── DRAWER ────────────────────────────────────────────────
+function toggleDrawer(){
+  if(document.getElementById('mmDrawer').classList.contains('active')) closeDrawer();
+  else openDrawer();
+}
+function openDrawer(){
+  document.getElementById('mmDrawer').classList.add('active');
+  document.getElementById('mmOverlay').classList.add('active');
+  document.getElementById('hamburger').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  document.getElementById('mmDrawer').classList.remove('active');
+  document.getElementById('mmOverlay').classList.remove('active');
+  document.getElementById('hamburger').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('#mmDrawer nav a').forEach(a=>a.addEventListener('click', closeDrawer));
+
+// ── FOOTER ANO ────────────────────────────────────────────
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// ── NOTÍCIAS SLIDER ───────────────────────────────────────
+const NEWS_FB=[
+  {label:'Novidade',titulo:'Cria a tua loja online em menos de 5 minutos, sem técnicos',data:'Jun 2025',cor1:'#050d1f',cor2:'#0f2060',icon:'fa-bolt'},
+  {label:'Expansão',titulo:'Mais de 50 sites lançados pela IMPERSILVA TECH',data:'Abr 2025',cor1:'#0a1a3d',cor2:'#1a1a1a',icon:'fa-store'},
+  {label:'Visão',titulo:'O nosso roteiro para os próximos anos em Angola',data:'Mar 2025',cor1:'#0d0d0d',cor2:'#0a1a3d',icon:'fa-compass'},
+];
+let newsIdx=0,newsTimer2;
+function renderNews(items){
+  const slides=document.getElementById('newsSlides');
+  const dots=document.getElementById('newsDots');
+  slides.innerHTML=items.map((n,i)=>`
+    <div class="news-slide${i===0?' active':''}" data-i="${i}">
+      ${n.imagem?`<img class="news-bg" src="${n.imagem}" alt="">`:''}
+      <div class="news-placeholder" style="background:linear-gradient(135deg,${n.cor1||'#0d0d0d'} 0%,${n.cor2||'#1a1a1a'} 100%)">
+        <i class="fa-solid ${n.icon||'fa-newspaper'}" style="font-size:5rem;opacity:.06;position:absolute;color:white"></i>
+      </div>
+      <div class="news-gradient"></div>
+      <div class="news-body">
+        <div class="news-badge">${n.label||'Notícia'}</div>
+        <div class="news-titulo">${n.titulo}</div>
+        <div class="news-data">${n.data||''}</div>
+      </div>
+    </div>`
+  ).join('');
+  dots.innerHTML=items.map((_,i)=>`<div class="ndot${i===0?' active':''}" onclick="goNews(${i})"></div>`).join('');
+  clearInterval(newsTimer2);newsTimer2=setInterval(()=>goNews((newsIdx+1)%items.length),4000);
+}
+function goNews(i){
+  const slides=document.getElementById('newsSlides').querySelectorAll('.news-slide');
+  const dots=document.getElementById('newsDots').querySelectorAll('.ndot');
+  if(!slides.length)return;
+  slides[newsIdx].classList.remove('active');
+  dots[newsIdx].classList.remove('active');
+  newsIdx=i;
+  slides[newsIdx].classList.add('active');
+  dots[newsIdx].classList.add('active');
+}
+
+// ── FALLBACK DATA (apenas IMPERSILVA TECH) ────────────────
+const TIMELINE_FB=[
+  {ano:'2026',h:'A ideia nasce',p:'A IMPERSILVA TECH surge com a missão de digitalizar negócios angolanos e apoiar jovens empreendedores.',bar:'b'},
+  {ano:'2026',h:'Plataforma consolidada',p:'Lançamento da plataforma self-service: o cliente cria, personaliza e publica a própria loja em minutos.',bar:'s'},
+];
+
+const MVV_FB=[
+  {tipo:'mv',icon:'fa-bullseye',label:'Nossa Missão',sub:'O que fazemos',h:'Empreendedorismo acessível para todos',p:'Damos a qualquer pessoa em Angola — sobretudo aos jovens que querem começar o seu próprio negócio — a possibilidade de criar uma loja online a partir de templates, personalizá-la e publicá-la em minutos, sem precisar de loja física nem de conhecimentos técnicos.',values:[]},
+  {tipo:'vis',icon:'fa-eye',label:'Nossa Visão',sub:'Para onde vamos',h:'Ser a plataforma líder de Angola',p:'Ser a plataforma de referência para criação de lojas online em Angola, reconhecida pela rapidez, simplicidade e pelo apoio a uma nova geração de empreendedores angolanos.',values:[]},
+  {tipo:'val',icon:'fa-gem',label:'Nossos Valores',sub:'Como operamos',h:'Os pilares que nos guiam',p:'',values:['Rapidez — loja disponível em minutos','Simplicidade — self-service, sem código','Acessibilidade — preços adaptados a Angola','Apoio ao empreendedorismo jovem','Suporte local — atendimento em português']},
+];
+
+const EQUIPA_FB=[
+  {nome:'Silva',cargo:'Fundador & Developer',bio:'Responsável pelo desenvolvimento da plataforma e pela direção técnica da IMPERSILVA TECH — do código ao lançamento de cada loja.',cor1:'#050d1f',cor2:'#0f2060',social:{wa:'https://wa.me/244954288128'}},
+  {nome:'Equipa de Suporte',cargo:'Atendimento ao Cliente',bio:'Acompanha cada cliente desde o primeiro contacto até ao lançamento da loja, garantindo um processo simples e sem complicações.',cor1:'#0a1015',cor2:'#1a2a3d',social:{wa:'https://wa.me/244954288128'}},
+];
+
+const FAQ_FB=[
+  {q:'O que é a IMPERSILVA TECH?',a:'É uma plataforma angolana self-service que permite a qualquer pessoa criar a sua própria loja online, a partir de templates, sem precisar de conhecimentos técnicos.'},
+  {q:'Quanto tempo demora a criar uma loja online?',a:'É self-service: tu próprio escolhes um template, personalizas a loja à tua medida e, depois de publicar, ela fica disponível em menos de 5 minutos.'},
+  {q:'Que tipo de lojas posso criar?',a:'Qualquer tipo. Trabalhamos com lojas online para qualquer tipo de produto ou negócio — moda, restauração, beleza, eletrónica e muito mais.'},
+  {q:'Para quem é a IMPERSILVA TECH?',a:'É pensada especialmente para quem quer começar o seu próprio negócio sem precisar de uma loja física — uma alternativa acessível face aos elevados custos de arrendamento em Angola, ideal para jovens que querem entrar no empreendedorismo.'},
+  {q:'Preciso de saber programar para criar a minha loja?',a:'Não. Escolhes um template, personalizas cores, produtos e informações através do Portal do Cliente, e publicas — tudo sem código.'},
+  {q:'Onde está sediada a IMPERSILVA TECH?',a:'A nossa equipa está sediada em Angola, mas atendemos clientes em todas as províncias do país de forma remota, pela internet e WhatsApp.'},
+  {q:'Como funcionam os pagamentos na loja?',a:'As lojas integram-se com o WhatsApp para receber encomendas, e estamos a expandir os pagamentos online diretos via Multicaixa Express.'},
+  {q:'Como posso entrar em contacto?',a:'Podes falar connosco pelo WhatsApp, preencher o formulário em Contacto, ou seguir-nos no Facebook, Instagram e LinkedIn.'},
+];
+
+// ── RENDER ────────────────────────────────────────────────
+function renderTimeline(items){
+  document.getElementById('historiaTimeline').innerHTML=items.map(t=>`
+    <div class="hist-card">
+      <div class="hist-card-bar bar-${t.bar||'b'}"></div>
+      <div>
+        <div class="hist-year">${t.ano}</div>
+        <div class="hist-h">${t.h}</div>
+        <div class="hist-p">${t.p}</div>
+      </div>
+    </div>`
+  ).join('');
+}
+
+function renderMVV(items){
+  document.getElementById('mvvGrid').innerHTML=items.map(m=>`
+    <div class="mvv-card ${m.tipo}">
+      <div class="mvv-icon"><i class="fa-solid ${m.icon||'fa-circle'}"></i></div>
+      <div class="mvv-label">${m.label}</div>
+      <div class="mvv-sub">${m.sub}</div>
+      <div class="mvv-h">${m.h}</div>
+      ${m.p?`<div class="mvv-p">${m.p}</div>`:''}
+      ${m.values&&m.values.length?`<div class="mvv-values">${m.values.map(v=>`<div class="mvv-value"><i class="fa-solid fa-check"></i>${v}</div>`).join('')}</div>`:''}
+    </div>`
+  ).join('');
+}
+
+// ── EQUIPA (CAROUSEL FULLSCREEN) ──────────────────────────
+let equipaIdx=0,equipaTimer,equipaData=[],equipaPaused=false;
+function renderEquipa(membros){
+  if(!membros||!membros.length)return;
+  equipaData=membros;
+  const track=document.getElementById('equipaTrack');
+  const dots=document.getElementById('equipaDots');
+  track.innerHTML=membros.map((m,i)=>{
+    const bg=m.foto||'';
+    return`<div class="cat${i===0?' active':''}" data-i="${i}">
+      ${bg?`<img class="cat-bg" src="${bg}" alt="" loading="lazy">`:`<div class="cat-bg" style="background:linear-gradient(135deg,${m.cor1||'#0d0d0d'} 0%,${m.cor2||'#1a1a1a'} 100%)"></div>`}
+      <div class="cat-overlay"></div>
+      <div class="cat-body">
+        <div class="membro-cargo">${m.cargo||''}</div>
+        <div class="membro-nome">${m.nome}</div>
+        <div class="membro-bio">${m.bio||''}</div>
+        <div class="membro-social">
+          ${m.social&&m.social.li?`<a href="${m.social.li}" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>`:''}
+          ${m.social&&m.social.ig?`<a href="${m.social.ig}" target="_blank"><i class="fa-brands fa-instagram"></i></a>`:''}
+          ${m.social&&m.social.wa?`<a href="${m.social.wa}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>`:''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  dots.innerHTML=membros.map((_,i)=>`<div class="cdot${i===0?' active':''}" onclick="goEquipa(${i})"></div>`).join('');
+  track.querySelectorAll('.cat').forEach(card=>{
+    card.addEventListener('mousedown',()=>equipaPaused=true);
+    card.addEventListener('mouseup',()=>equipaPaused=false);
+    card.addEventListener('mouseleave',()=>equipaPaused=false);
+    card.addEventListener('touchstart',()=>equipaPaused=true,{passive:true});
+    card.addEventListener('touchend',()=>equipaPaused=false);
+  });
+  clearInterval(equipaTimer);equipaTimer=setInterval(()=>{if(!equipaPaused)moveEquipa(1);},5000);
+}
+function goEquipa(i){
+  equipaIdx=(i+equipaData.length)%equipaData.length;
+  document.getElementById('equipaTrack').style.transform=`translateX(-${equipaIdx*100}%)`;
+  document.querySelectorAll('#equipaDots .cdot').forEach((d,j)=>d.classList.toggle('active',j===equipaIdx));
+  document.querySelectorAll('#equipaTrack .cat').forEach((c,j)=>c.classList.toggle('active',j===equipaIdx));
+}
+function moveEquipa(dir){goEquipa(equipaIdx+dir);}
+
+// ── FAQ (mesma lógica do index) ───────────────────────────
+function renderFaq(items){
+  document.getElementById('faqList').innerHTML=items.map((f,i)=>`
+    <div class="faq-item" id="faq${i}">
+      <button class="faq-q" onclick="toggleFaq(${i})" aria-expanded="false">
+        <span>${f.q}</span>
+        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+      </button>
+      <div class="faq-a" role="region">
+        <div class="faq-a-inner">${f.a}</div>
+      </div>
+    </div>`
+  ).join('');
+}
+function toggleFaq(i){
+  const item=document.getElementById('faq'+i);
+  const btn=item.querySelector('.faq-q');
+  const answer=item.querySelector('.faq-a');
+  const isOpen=answer.classList.contains('open');
+  document.querySelectorAll('#faqList .faq-a').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('#faqList .faq-q').forEach(q=>{q.classList.remove('active');q.setAttribute('aria-expanded','false');});
+  if(!isOpen){
+    answer.classList.add('open');
+    btn.classList.add('active');
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+
+// ── CARREGAR DADOS ────────────────────────────────────────
+async function carregarDados(){
+  renderNews(NEWS_FB);
+  renderTimeline(TIMELINE_FB);
+  renderMVV(MVV_FB);
+  renderEquipa(EQUIPA_FB);
+  renderFaq(FAQ_FB);
+  try{
+    const d=await fetch(API+'/api/site/sobre',{signal:AbortSignal.timeout(5000)}).then(r=>r.ok?r.json():null);
+    if(!d)return;
+    if(d.hero){
+      if(d.hero.titulo)    document.getElementById('sobreHeroTitle').innerHTML=d.hero.titulo;
+      if(d.hero.slogan)    document.getElementById('sobreSlogan').textContent='"'+d.hero.slogan+'"';
+      if(d.hero.subtitulo) document.getElementById('sobreHeroSub').textContent=d.hero.subtitulo;
+    }
+    if(d.noticias&&d.noticias.length) renderNews(d.noticias);
+    if(d.historia){
+      if(d.historia.texto) document.getElementById('historiaTxt').innerHTML=d.historia.texto.map(p=>`<p>${p}</p>`).join('');
+      if(d.historia.timeline&&d.historia.timeline.length) renderTimeline(d.historia.timeline);
+    }
+    if(d.mvv&&d.mvv.length)        renderMVV(d.mvv);
+    if(d.equipa&&d.equipa.length)  renderEquipa(d.equipa);
+    if(d.faq&&d.faq.length) renderFaq(d.faq);
+    if(d.equipa_desc) document.getElementById('equipaDesc').textContent=d.equipa_desc;
+    if(d.cta&&d.cta.subtitulo) document.getElementById('sobreCtaSub').textContent=d.cta.subtitulo;
+  }catch(e){}
+}
+
+carregarDados();
+
+// ── SWIPE TOUCH ───────────────────────────────────────────
+function addSwipe(el, onLeft, onRight){
+  let sx=0, sy=0;
+  el.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  el.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-sx;
+    const dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){dx<0?onLeft():onRight();}
+  },{passive:true});
+}
+setTimeout(()=>{
+  const equipaTrack=document.getElementById('equipaTrack');
+  if(equipaTrack) addSwipe(equipaTrack,()=>moveEquipa(1),()=>moveEquipa(-1));
+},800);
+
+if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
+</script>
+</body>
+</html>
