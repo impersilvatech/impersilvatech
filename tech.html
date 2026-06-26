@@ -36,9 +36,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"É mesmo gratuito criar uma conta?","acceptedAnswer":{"@type":"Answer","text":"Sim. Criar uma conta no Portal do Cliente é completamente gratuito. Pagas apenas pelo plano que escolheres (mensal, anual ou pagamento único) depois de criares o teu site."}},
     {"@type":"Question","name":"Posso mudar de template depois de publicar?","acceptedAnswer":{"@type":"Answer","text":"Sim. Podes mudar de template a qualquer momento pelo painel de gestão. O teu conteúdo (produtos, textos, imagens) é migrado automaticamente."}},
-    {"@type":"Question","name":"Qual a diferença entre os planos?","acceptedAnswer":{"@type":"Answer","text":"O Starter é ideal para começar com até 20 produtos. O Pro dá acesso a todos os templates, produtos ilimitados e domínio personalizado. O Business inclui tudo isso mais suporte prioritário 24 horas."}},
     {"@type":"Question","name":"Precisas de saber programar para criar um site?","acceptedAnswer":{"@type":"Answer","text":"Não. O Portal do Cliente foi desenhado para qualquer pessoa conseguir criar e gerir o seu site sem qualquer conhecimento técnico."}},
     {"@type":"Question","name":"Quanto tempo demora o site a ficar online depois de publicar?","acceptedAnswer":{"@type":"Answer","text":"Menos de 5 minutos. Depois de clicares em \"Publicar\" no Portal do Cliente, o teu site fica disponível no endereço escolhido quase de imediato."}},
     {"@type":"Question","name":"Posso vender produtos pelo site?","acceptedAnswer":{"@type":"Answer","text":"Sim. Todos os templates incluem catálogo de produtos e integração com WhatsApp para encomendas."}}
@@ -89,9 +87,9 @@ body{background:var(--dark);color:var(--white);font-weight:400;line-height:1.6;p
 
 /* ══ CIRCUIT ANIMATION ══ */
 .circuit-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.ct{fill:none;stroke:rgba(50,150,255,0.16);stroke-width:1.5}
-.cn{fill:rgba(60,170,255,0.38)}
-.cp{fill:none;stroke-linecap:round;stroke-width:2;stroke:rgba(140,225,255,0.95);stroke-dasharray:20 900}
+.ct{fill:none;stroke:rgba(50,150,255,0.30);stroke-width:1.5}
+.cn{fill:rgba(60,170,255,0.55)}
+.cp{fill:none;stroke-linecap:round;stroke-width:2.5;stroke:rgba(140,225,255,0.95);stroke-dasharray:20 900}
 @keyframes cFlow{from{stroke-dashoffset:920}to{stroke-dashoffset:0}}
 .cp1{animation:cFlow 4.1s linear infinite}
 .cp2{animation:cFlow 5.3s linear infinite 1.4s}
@@ -111,7 +109,7 @@ body{background:var(--dark);color:var(--white);font-weight:400;line-height:1.6;p
 .hero-sub{font-size:1rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;max-width:620px;font-weight:300}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.5rem;background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:14px;padding:20px 14px}
-.hstat-card{background:none;border:none;padding:0;transition:none}
+.hstat-card{background:none;border:none;padding:0;transition:none;display:flex;flex-direction:column;align-items:center;text-align:center}
 .hstat-card:hover{transform:none}
 .hstat-n{font-weight:900;font-size:2.2rem;line-height:1;display:flex;align-items:baseline;gap:2px}
 .hstat-n .r{color:var(--blue)}
@@ -213,7 +211,7 @@ body{background:var(--dark);color:var(--white);font-weight:400;line-height:1.6;p
 .tpl-tag{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--gray-lt);font-size:.65rem;padding:4px 10px;border-radius:4px;font-weight:500}
 
 /* ── PROCESSO ── */
-.proc-sec{background:var(--black)}
+.proc-sec{position:relative;overflow:hidden;background:var(--black)}
 .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .passo{background:var(--charcoal);border:1px solid var(--border);border-radius:14px;padding:26px 22px;position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .passo::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
@@ -237,44 +235,11 @@ body{background:var(--dark);color:var(--white);font-weight:400;line-height:1.6;p
 .passo-prazo{display:inline-flex;align-items:center;gap:4px;background:var(--blue-dim);border:1px solid rgba(10,102,194,.2);color:var(--blue-lt);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;margin-top:10px}
 
 /* ── DIFERENCIAIS ── */
-.dif-sec{background:var(--dark)}
+.dif-sec{position:relative;overflow:hidden;background:var(--dark)}
 
-/* ── PREÇOS ── */
-.preco-sec{background:var(--black)}
-.preco-toggle{display:flex;flex-wrap:wrap;background:var(--charcoal);border:1px solid var(--border);border-radius:40px;padding:4px;gap:4px;margin:0 auto 2.5rem;width:fit-content;max-width:100%;justify-content:center}
-.preco-toggle-btn{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 20px;border-radius:30px;border:none;background:transparent;color:var(--gray);cursor:pointer;transition:all .25s;white-space:nowrap}
-.preco-toggle-btn.active{background:var(--blue);color:#fff;box-shadow:0 4px 12px rgba(10,102,194,.3)}
-.preco-toggle-btn:hover:not(.active){color:var(--white)}
-.preco-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:2.8rem;padding-top:1.8rem;border-top:1px solid var(--divider)}
-.preco-trust-item{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--gray);font-weight:300}
-.preco-trust-item i{color:var(--blue-lt);font-size:.95rem}
-@media(max-width:540px){.preco-trust{gap:14px 20px;font-size:.72rem}}
-.preco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.preco-model{display:none}.preco-model.active{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.preco-card{background:var(--charcoal);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;transition:.3s;display:flex;flex-direction:column}
-.preco-card:hover{transform:translateY(-4px);border-color:rgba(10,102,194,.3);box-shadow:0 12px 40px rgba(0,0,0,.35)}
-.preco-card.destaque{border-color:var(--blue);background:linear-gradient(160deg,var(--charcoal) 0%,rgba(10,102,194,.06) 100%)}
-.preco-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
-.preco-nome{font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
-.preco-val{font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:4px;display:flex;align-items:baseline;gap:4px}
-.preco-val .moeda{font-size:1rem;font-weight:600;color:var(--gray-lt);margin-top:4px}
-.preco-val .period{font-size:.72rem;color:var(--gray);font-weight:400;margin-left:2px}
-.preco-free-tag{display:inline-block;background:var(--blue-dim);border:1px solid rgba(10,102,194,.25);color:var(--blue-lt);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:6px}
-.preco-desc{font-size:.8rem;color:var(--gray);font-weight:300;line-height:1.6;margin:8px 0 18px}
-.preco-features{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1;margin-bottom:24px}
-.preco-features li{font-size:.8rem;color:var(--gray-lt);display:flex;align-items:center;gap:8px;font-weight:300}
-.preco-features li i{color:var(--blue-lt);font-size:.7rem;flex-shrink:0}
-.preco-features li.nao{color:rgba(255,255,255,.3)}
-.preco-features li.nao i{color:rgba(255,255,255,.15)}
-.preco-cta{display:block;text-align:center;padding:.85rem;border-radius:8px;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .22s;margin-top:auto;border:none;cursor:pointer}
-.preco-cta-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.2)}
-.preco-cta-outline:hover{border-color:var(--white);background:rgba(255,255,255,.06)}
-.preco-cta-red{background:var(--blue);color:#fff}
-.preco-cta-red:hover{background:var(--blue-lt);box-shadow:0 8px 24px rgba(10,102,194,.3)}
-.preco-economia{display:inline-block;background:rgba(155,164,181,.12);border:1px solid rgba(155,164,181,.25);color:var(--silver-lt);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:10px;margin-left:6px}
 
 /* ── FAQ ── */
-.faq-sec{background:var(--charcoal);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)}
+.faq-sec{position:relative;overflow:hidden;background:var(--charcoal);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)}
 .faq-list{display:flex;flex-direction:column;gap:0}
 .faq-item{border-bottom:1px solid var(--divider)}
 .faq-item:last-child{border-bottom:none}
@@ -374,12 +339,13 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
   .news-card{height:420px}
   .passos{grid-template-columns:1fr 1fr}
   .tpl-card{flex:0 0 100%;height:420px}
-  .preco-model.active{grid-template-columns:1fr}
+  .preco-model.active{grid-template-columns:1fr 1fr}
   .dep-slide{min-height:320px;padding:28px}
   .dep-texto{font-size:.95rem}
   .preco-toggle{flex-wrap:wrap;justify-content:center}
 }
 @media(max-width:540px){
+  .preco-model.active{grid-template-columns:1fr}
   .cat{height:360px}
   .news-card{height:360px}
   .passos{grid-template-columns:1fr}
@@ -427,29 +393,28 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
   <div class="hero-glow-r"></div>
   <div class="hero-glow-b"></div>
   <div class="hero-stripe"></div>
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.45">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55"  r="2.5"/><circle class="cn" cx="718" cy="55"  r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="108" r="2"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22"  cy="68"  r="2.5"/><circle class="cn" cx="84"  cy="68"  r="2"/><circle class="cn" cx="84"  cy="32"  r="2.5"/><circle class="cn" cx="158" cy="32"  r="2"/><circle class="cn" cx="158" cy="94"  r="2.5"/><circle class="cn" cx="114" cy="94"  r="2"/>
-    <circle class="cn" cx="58"  cy="248" r="2.5"/><circle class="cn" cx="58"  cy="206" r="2"/><circle class="cn" cx="118" cy="206" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="225" r="2.5"/><circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="375" cy="48"  r="2.5"/><circle class="cn" cx="448" cy="48"  r="2"/><circle class="cn" cx="448" cy="90"  r="2.5"/><circle class="cn" cx="386" cy="90"  r="2"/><circle class="cn" cx="386" cy="130" r="2.5"/><circle class="cn" cx="428" cy="130" r="2"/>
-    <circle class="cn" cx="44"  cy="118" r="2.5"/><circle class="cn" cx="44"  cy="156" r="2"/><circle class="cn" cx="20"  cy="156" r="2.5"/><circle class="cn" cx="20"  cy="196" r="2"/><circle class="cn" cx="62"  cy="196" r="2.5"/><circle class="cn" cx="62"  cy="175" r="2"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="622" cy="248" r="2"/><circle class="cn" cx="700" cy="248" r="2.5"/><circle class="cn" cx="700" cy="295" r="2"/>
-    <circle class="cn" cx="552" cy="36"  r="2.5"/><circle class="cn" cx="552" cy="62"  r="2"/><circle class="cn" cx="508" cy="62"  r="2.5"/><circle class="cn" cx="508" cy="96"  r="2"/><circle class="cn" cx="575" cy="96"  r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="cp cp6" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
+  <svg class="circuit-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.7">
+    <path class="ct" d="M 0 0 H 100 V 55 H 60 V 110 H 130 V 75 H 200 V 145 H 155 V 210 H 110"/>
+    <path class="ct" d="M 800 0 H 700 V 60 H 740 V 120 H 670 V 85 H 610 V 150 H 650 V 200"/>
+    <path class="ct" d="M 0 500 H 90 V 430 H 50 V 370 H 120 V 400 H 180 V 330 H 140 V 270"/>
+    <path class="ct" d="M 800 500 H 710 V 420 H 750 V 360 H 680 V 400 H 630 V 330"/>
+    <path class="ct" d="M 310 0 V 55 H 360 V 30 H 420 V 70 H 470 V 25 H 520 V 65 H 490 V 110 H 540 V 80 H 580"/>
+    <path class="ct" d="M 270 500 V 445 H 330 V 470 H 390 V 430 H 450 V 460 H 510 V 420 H 570 V 450"/>
+    <path class="ct" d="M 0 250 H 55 V 220 H 90 V 270 H 45 V 310 H 100 V 280 H 155"/>
+    <path class="ct" d="M 800 250 H 745 V 215 H 710 V 265 H 755 V 305 H 700 V 275 H 645"/>
+    <circle class="cn" cx="100" cy="55" r="2.5"/><circle class="cn" cx="60" cy="110" r="2"/><circle class="cn" cx="130" cy="75" r="2.5"/><circle class="cn" cx="200" cy="145" r="2"/><circle class="cn" cx="155" cy="210" r="2.5"/>
+    <circle class="cn" cx="700" cy="60" r="2.5"/><circle class="cn" cx="740" cy="120" r="2"/><circle class="cn" cx="670" cy="85" r="2.5"/><circle class="cn" cx="610" cy="150" r="2"/><circle class="cn" cx="650" cy="200" r="2.5"/>
+    <circle class="cn" cx="90" cy="430" r="2.5"/><circle class="cn" cx="50" cy="370" r="2"/><circle class="cn" cx="120" cy="400" r="2.5"/><circle class="cn" cx="180" cy="330" r="2"/><circle class="cn" cx="140" cy="270" r="2.5"/>
+    <circle class="cn" cx="710" cy="420" r="2.5"/><circle class="cn" cx="750" cy="360" r="2"/><circle class="cn" cx="680" cy="400" r="2.5"/><circle class="cn" cx="630" cy="330" r="2.5"/>
+    <circle class="cn" cx="360" cy="55" r="2.5"/><circle class="cn" cx="420" cy="70" r="2"/><circle class="cn" cx="470" cy="25" r="2.5"/><circle class="cn" cx="540" cy="80" r="2"/><circle class="cn" cx="490" cy="110" r="2.5"/>
+    <circle class="cn" cx="55" cy="220" r="2.5"/><circle class="cn" cx="90" cy="270" r="2"/><circle class="cn" cx="45" cy="310" r="2.5"/><circle class="cn" cx="155" cy="280" r="2"/>
+    <circle class="cn" cx="745" cy="215" r="2.5"/><circle class="cn" cx="710" cy="265" r="2"/><circle class="cn" cx="755" cy="305" r="2.5"/><circle class="cn" cx="645" cy="275" r="2"/>
+    <path class="cp cp1" d="M 0 0 H 100 V 55 H 60 V 110 H 130 V 75 H 200 V 145 H 155 V 210 H 110"/>
+    <path class="cp cp2" d="M 800 0 H 700 V 60 H 740 V 120 H 670 V 85 H 610 V 150 H 650 V 200"/>
+    <path class="cp cp3" d="M 0 500 H 90 V 430 H 50 V 370 H 120 V 400 H 180 V 330 H 140 V 270"/>
+    <path class="cp cp4" d="M 800 500 H 710 V 420 H 750 V 360 H 680 V 400 H 630 V 330"/>
+    <path class="cp cp5" d="M 310 0 V 55 H 360 V 30 H 420 V 70 H 470 V 25 H 520 V 65 H 490 V 110 H 540 V 80 H 580"/>
+    <path class="cp cp6" d="M 0 250 H 55 V 220 H 90 V 270 H 45 V 310 H 100 V 280 H 155"/>
   </svg>
   <div class="hero-inner">
     <div class="hero-left">
@@ -531,6 +496,23 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
 
 <!-- PROCESSO -->
 <section class="sec proc-sec">
+  <svg class="circuit-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.45">
+    <path class="ct" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="ct" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
+    <path class="ct" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="ct" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="ct" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+    <path class="ct" d="M 270 300 V 255 H 330 V 275 H 390 V 240 H 450 V 260"/>
+    <circle class="cn" cx="80" cy="45" r="2.5"/><circle class="cn" cx="40" cy="90" r="2"/><circle class="cn" cx="100" cy="65" r="2.5"/><circle class="cn" cx="160" cy="130" r="2"/>
+    <circle class="cn" cx="720" cy="50" r="2.5"/><circle class="cn" cx="760" cy="100" r="2"/><circle class="cn" cx="700" cy="70" r="2.5"/><circle class="cn" cx="640" cy="135" r="2"/>
+    <circle class="cn" cx="75" cy="240" r="2.5"/><circle class="cn" cx="35" cy="190" r="2"/><circle class="cn" cx="105" cy="220" r="2.5"/><circle class="cn" cx="165" cy="160" r="2"/>
+    <circle class="cn" cx="725" cy="235" r="2.5"/><circle class="cn" cx="765" cy="185" r="2"/><circle class="cn" cx="705" cy="215" r="2.5"/><circle class="cn" cx="645" cy="155" r="2"/>
+    <circle class="cn" cx="390" cy="40" r="2.5"/><circle class="cn" cx="440" cy="55" r="2"/><circle class="cn" cx="490" cy="20" r="2.5"/>
+    <path class="cp cp1" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="cp cp2" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
+    <path class="cp cp4" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="cp cp5" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+  </svg>
   <div class="sec-inner">
     <div class="sec-tag reveal">Como funciona</div>
     <div class="sec-title reveal reveal-delay-1">Do template ao site <span class="r">no ar</span></div>
@@ -578,6 +560,23 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
 
 <!-- DIFERENCIAIS -->
 <section class="sec dif-sec">
+  <svg class="circuit-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.4">
+    <path class="ct" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="ct" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
+    <path class="ct" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="ct" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="ct" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+    <path class="ct" d="M 270 300 V 255 H 330 V 275 H 390 V 240 H 450 V 260"/>
+    <circle class="cn" cx="80" cy="45" r="2.5"/><circle class="cn" cx="40" cy="90" r="2"/><circle class="cn" cx="100" cy="65" r="2.5"/><circle class="cn" cx="160" cy="130" r="2"/>
+    <circle class="cn" cx="720" cy="50" r="2.5"/><circle class="cn" cx="760" cy="100" r="2"/><circle class="cn" cx="700" cy="70" r="2.5"/><circle class="cn" cx="640" cy="135" r="2"/>
+    <circle class="cn" cx="75" cy="240" r="2.5"/><circle class="cn" cx="35" cy="190" r="2"/><circle class="cn" cx="105" cy="220" r="2.5"/><circle class="cn" cx="165" cy="160" r="2"/>
+    <circle class="cn" cx="725" cy="235" r="2.5"/><circle class="cn" cx="765" cy="185" r="2"/><circle class="cn" cx="705" cy="215" r="2.5"/><circle class="cn" cx="645" cy="155" r="2"/>
+    <circle class="cn" cx="390" cy="40" r="2.5"/><circle class="cn" cx="440" cy="55" r="2"/><circle class="cn" cx="490" cy="20" r="2.5"/>
+    <path class="cp cp2" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
+    <path class="cp cp3" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="cp cp5" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+    <path class="cp cp6" d="M 270 300 V 255 H 330 V 275 H 390 V 240 H 450 V 260"/>
+  </svg>
   <div class="sec-inner">
     <div class="sec-tag reveal">Por que escolher a IMPERSILVA TECH</div>
     <div class="sec-title reveal reveal-delay-1">O que nos <span class="r">diferencia</span></div>
@@ -594,32 +593,26 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
   </div>
 </section>
 
-<!-- PREÇOS -->
-<section class="sec preco-sec">
-  <div class="sec-inner">
-    <div class="sec-tag reveal">Investimento</div>
-    <div class="sec-title reveal reveal-delay-1">Planos <span class="r">simples</span>, sem surpresas</div>
-    <p class="sec-sub reveal reveal-delay-2" style="margin-bottom:2rem">Cria a tua conta gratuitamente. Escolhe como preferes pagar — por mês, por ano ou uma única vez.</p>
-    <div class="preco-toggle reveal reveal-delay-3" id="precoToggle">
-      <button class="preco-toggle-btn active" onclick="setModelo('mensal',this)">Mensal</button>
-      <button class="preco-toggle-btn" onclick="setModelo('trimestral',this)">Trimestral <span class="preco-economia">-10%</span></button>
-      <button class="preco-toggle-btn" onclick="setModelo('semestral',this)">Semestral <span class="preco-economia">-15%</span></button>
-      <button class="preco-toggle-btn" onclick="setModelo('anual',this)">Anual <span class="preco-economia">-25%</span></button>
-    </div>
-    <div id="precoMensal" class="preco-model active"></div>
-    <div id="precoTrimestral" class="preco-model"></div>
-    <div id="precoSemestral" class="preco-model"></div>
-    <div id="precoAnual" class="preco-model"></div>
-    <div class="preco-trust reveal reveal-delay-3">
-      <div class="preco-trust-item"><i class="fa-solid fa-shield-halved"></i> Pagamento seguro</div>
-      <div class="preco-trust-item"><i class="fa-brands fa-whatsapp"></i> Suporte por WhatsApp</div>
-      <div class="preco-trust-item"><i class="fa-solid fa-rotate-left"></i> Cancela quando quiseres</div>
-    </div>
-  </div>
-</section>
 
 <!-- FAQ -->
 <section class="sec faq-sec">
+  <svg class="circuit-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.5">
+    <path class="ct" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="ct" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
+    <path class="ct" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="ct" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="ct" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+    <path class="ct" d="M 270 300 V 255 H 330 V 275 H 390 V 240 H 450 V 260"/>
+    <circle class="cn" cx="80" cy="45" r="2.5"/><circle class="cn" cx="40" cy="90" r="2"/><circle class="cn" cx="100" cy="65" r="2.5"/><circle class="cn" cx="160" cy="130" r="2"/>
+    <circle class="cn" cx="720" cy="50" r="2.5"/><circle class="cn" cx="760" cy="100" r="2"/><circle class="cn" cx="700" cy="70" r="2.5"/><circle class="cn" cx="640" cy="135" r="2"/>
+    <circle class="cn" cx="75" cy="240" r="2.5"/><circle class="cn" cx="35" cy="190" r="2"/><circle class="cn" cx="105" cy="220" r="2.5"/><circle class="cn" cx="165" cy="160" r="2"/>
+    <circle class="cn" cx="725" cy="235" r="2.5"/><circle class="cn" cx="765" cy="185" r="2"/><circle class="cn" cx="705" cy="215" r="2.5"/><circle class="cn" cx="645" cy="155" r="2"/>
+    <circle class="cn" cx="390" cy="40" r="2.5"/><circle class="cn" cx="440" cy="55" r="2"/><circle class="cn" cx="490" cy="20" r="2.5"/>
+    <path class="cp cp1" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="cp cp3" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="cp cp4" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="cp cp5" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+  </svg>
   <div class="sec-inner">
     <div class="sec-tag reveal">Dúvidas frequentes</div>
     <div class="sec-title reveal reveal-delay-1">Per<span class="r">gun</span><span class="b">tas</span> & Respostas</div>
@@ -647,7 +640,7 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
 
 <!-- CTA -->
 <section class="cta-section">
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.3">
+  <svg class="circuit-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.55">
     <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
     <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
     <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
@@ -681,7 +674,7 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
 
 <!-- FOOTER -->
 <footer>
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.25">
+  <svg class="circuit-svg" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.45">
     <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
     <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
     <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
@@ -1039,118 +1032,6 @@ const FEATURES_BASE=[
   {ok:true, txt:'Hospedagem gratuita'},
   {ok:true, txt:'Painel de gestão'},
 ];
-const PLANOS=[
-  {
-    nome:'Starter',destaque:false,
-    mensal:{preco:'1.500',period:'/mês'},
-    trimestral:{preco:'4.000',period:'/trimestre',economia:'Poupa 500 Kz'},
-    semestral:{preco:'7.500',period:'/semestre',economia:'Poupa 1.500 Kz'},
-    anual:{preco:'13.000',period:'/ano',economia:'Poupa 5.000 Kz'},
-    desc:'Ideal para quem está a começar.',
-    features:[
-      ...FEATURES_BASE,
-      {ok:true, txt:'1 template à escolha'},
-      {ok:true, txt:'Até 20 produtos'},
-      {ok:false,txt:'Domínio personalizado'},
-      {ok:false,txt:'Suporte prioritário'},
-    ],
-    cta:'Começar grátis',cta_style:'outline'
-  },
-  {
-    nome:'Pro',destaque:true,badge:'Mais popular',
-    mensal:{preco:'3.500',period:'/mês'},
-    trimestral:{preco:'9.500',period:'/trimestre',economia:'Poupa 1.000 Kz'},
-    semestral:{preco:'18.000',period:'/semestre',economia:'Poupa 3.000 Kz'},
-    anual:{preco:'32.000',period:'/ano',economia:'Poupa 10.000 Kz'},
-    desc:'Para negócios que querem crescer com mais funcionalidades.',
-    features:[
-      ...FEATURES_BASE,
-      {ok:true, txt:'Todos os templates'},
-      {ok:true, txt:'Produtos ilimitados'},
-      {ok:true, txt:'Domínio personalizado'},
-      {ok:false,txt:'Suporte prioritário'},
-    ],
-    cta:'Escolher Pro',cta_style:'red'
-  },
-  {
-    nome:'Business',destaque:false,
-    mensal:{preco:'7.000',period:'/mês'},
-    trimestral:{preco:'19.000',period:'/trimestre',economia:'Poupa 2.000 Kz'},
-    semestral:{preco:'36.000',period:'/semestre',economia:'Poupa 6.000 Kz'},
-    anual:{preco:'64.000',period:'/ano',economia:'Poupa 20.000 Kz'},
-    desc:'Solução completa para negócios estabelecidos.',
-    features:[
-      ...FEATURES_BASE,
-      {ok:true, txt:'Todos os templates'},
-      {ok:true, txt:'Produtos ilimitados'},
-      {ok:true, txt:'Domínio personalizado'},
-      {ok:true, txt:'Suporte prioritário 24h'},
-    ],
-    cta:'Escolher Business',cta_style:'outline'
-  },
-];
-
-function renderCardPreco(p,modelo){
-  const info=p[modelo];
-  return`<div class="preco-card${p.destaque?' destaque':''}">
-    ${p.badge?`<div class="preco-badge">${p.badge}</div>`:''}
-    <div class="preco-free-tag"><i class="fa-solid fa-check-circle"></i> Conta grátis</div>
-    <div class="preco-nome">${p.nome}</div>
-    <div class="preco-val">
-      <span class="moeda">Kz</span>
-      <span>${info.preco}</span>
-      <span class="period">${info.period}</span>
-    </div>
-    ${info.economia?`<div style="font-size:.72rem;color:var(--silver-lt);margin-bottom:4px"><i class="fa-solid fa-tag"></i> ${info.economia}</div>`:''}
-    <div class="preco-desc">${p.desc}</div>
-    <ul class="preco-features">
-      ${p.features.map(f=>`<li class="${f.ok?'':'nao'}"><i class="fa-solid ${f.ok?'fa-check-circle':'fa-circle-xmark'}"></i>${f.txt}</li>`).join('')}
-    </ul>
-    <a href="/verificar-site.html" class="preco-cta preco-cta-${p.cta_style==='red'?'red':'outline'}">${p.cta}</a>
-  </div>`;
-}
-
-function renderPrecos(){
-  ['mensal','trimestral','semestral','anual'].forEach(modelo=>{
-    const el=document.getElementById('preco'+modelo.charAt(0).toUpperCase()+modelo.slice(1));
-    if(el) el.innerHTML=PLANOS.map(p=>renderCardPreco(p,modelo)).join('');
-  });
-}
-
-let modeloAtivo='mensal';
-function setModelo(modelo,btn){
-  modeloAtivo=modelo;
-  document.querySelectorAll('.preco-toggle-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.preco-model').forEach(m=>m.classList.remove('active'));
-  const id='preco'+modelo.charAt(0).toUpperCase()+modelo.slice(1);
-  document.getElementById(id).classList.add('active');
-}
-
-// ── FAQ ───────────────────────────────────────────────────
-const FAQ_FB=[
-  {cat:'Conta',q:'É mesmo gratuito criar uma conta?',a:'Sim. Criar uma conta no Portal do Cliente é completamente gratuito. Pagas apenas pelo plano que escolheres (mensal, anual ou pagamento único) depois de criares o teu site.'},
-  {cat:'Templates',q:'Posso mudar de template depois de publicar?',a:'Sim. Podes mudar de template a qualquer momento pelo painel de gestão. O teu conteúdo (produtos, textos, imagens) é migrado automaticamente.'},
-  {cat:'Planos',q:'Qual a diferença entre os planos?',a:'O Starter é ideal para começar com até 20 produtos. O Pro dá acesso a todos os templates, produtos ilimitados e domínio personalizado. O Business inclui tudo isso mais suporte prioritário 24 horas.'},
-  {cat:'Planos',q:'O que acontece se cancelar a mensalidade?',a:'O teu site fica em pausa mas não é eliminado. Podes reactivar a qualquer momento sem perder os dados. Com o pagamento único o site fica no ar para sempre.'},
-  {cat:'Técnico',q:'Precisas de saber programar para criar um site?',a:'Não. O Portal do Cliente foi desenhado para qualquer pessoa conseguir criar e gerir o seu site sem qualquer conhecimento técnico.'},
-  {cat:'Técnico',q:'Onde fica hospedado o meu site?',a:'O teu site fica hospedado no GitHub Pages e com cache na Cloudflare — o que garante carregamento rápido em Angola e em todo o mundo, sem custos adicionais.'},
-  {cat:'Técnico',q:'Quanto tempo demora o site a ficar online depois de publicar?',a:'Menos de 5 minutos. Depois de clicares em "Publicar" no Portal do Cliente, o teu site fica disponível no endereço escolhido quase de imediato.'},
-  {cat:'Comercial',q:'Posso vender produtos pelo site?',a:'Sim. Todos os templates incluem catálogo de produtos e integração com WhatsApp para encomendas. Os clientes vêem os produtos e encomendam directamente pelo WhatsApp.'},
-  {cat:'Comercial',q:'Posso ter um domínio próprio (ex: meusite.ao)?',a:'Sim, nos planos Pro e Business. No Starter o teu site fica disponível num subdomínio gratuito (ex: meusite.impersilva.ao).'},
-  {cat:'Suporte',q:'O que está incluído no suporte?',a:'Todos os planos incluem suporte por WhatsApp em horário comercial. O plano Business tem suporte prioritário 24 horas com tempo de resposta garantido de 2 horas.'},
-];
-function renderFaq(items){
-  document.getElementById('faqList').innerHTML=items.map((f,i)=>`
-    <div class="faq-item" id="faq${i}">
-      <button class="faq-q" onclick="toggleFaq(${i})" aria-expanded="false" aria-controls="faqA${i}">
-        <span>${f.q}</span>
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <div class="faq-a" id="faqA${i}" role="region"><p>${f.a}</p></div>
-    </div>`
-  ).join('');
-}
 function toggleFaq(i){
   const item=document.getElementById('faq'+i);
   const btn=item.querySelector('.faq-q');
@@ -1158,6 +1039,20 @@ function toggleFaq(i){
   document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
   if(!wasOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
 }
+
+// ── FAQ ────────────────────────────────────────────────────
+const FAQ_FB=[
+  {cat:'Plataforma',q:'Como funciona o processo de criação do site?',a:'Escolhes um template, personalizas com as cores e produtos do teu negócio no Portal do Cliente, e a tua loja fica online. Sem código, sem complicações.'},
+  {cat:'Plataforma',q:'Quanto tempo demora a minha loja a ficar online?',a:'Em média 7 dias úteis a partir do momento em que confirmas o pedido. Casos mais simples podem ficar prontos em menos tempo.'},
+  {cat:'Plataforma',q:'Preciso de saber programar para usar a plataforma?',a:'Não. O Portal do Cliente foi criado para qualquer empreendedor, mesmo sem qualquer conhecimento técnico. Tudo funciona por cliques.'},
+  {cat:'Plataforma',q:'Posso actualizar os produtos e preços sozinho?',a:'Sim. Tens controlo total sobre o catálogo. Adicionas, editas ou removes produtos, alteras preços e geres o stock a qualquer momento.'},
+  {cat:'Templates',q:'Os templates são personalizáveis?',a:'Sim. Podes alterar cores, imagens, textos e logotipo directamente no portal. Cada template é adaptado ao teu tipo de negócio.'},
+  {cat:'Templates',q:'Posso mudar de template depois de lançar?',a:'Sim, podes solicitar a mudança de template a qualquer momento. A equipa da IMPERSILVA TECH trata da migração sem perder os teus dados.'},
+  {cat:'Técnico',q:'A loja funciona no telemóvel dos meus clientes?',a:'Sim. Todos os templates são totalmente responsivos — funcionam perfeitamente em telemóvel, tablet e computador.'},
+  {cat:'Técnico',q:'Como é que os clientes fazem as encomendas?',a:'As encomendas chegam directamente via WhatsApp, onde combinam o pagamento e a entrega. Simples para o cliente, simples para ti.'},
+  {cat:'Suporte',q:'Que suporte tenho após o lançamento?',a:'A nossa equipa está disponível via WhatsApp e email para qualquer dúvida ou ajuste. Podes contactar-nos a qualquer momento.'},
+  {cat:'Suporte',q:'Posso pedir alterações ao design depois do lançamento?',a:'Sim. Pequenos ajustes de design são incluídos no período de suporte pós-lançamento. Para alterações maiores, apresentamos um orçamento.'},
+];
 
 // ── DEPOIMENTOS (SLIDER FULLSCREEN) ──────────────────────
 const DEPS_FB=[
@@ -1250,7 +1145,6 @@ async function carregarDados(){
   renderCats(CATS_FB);
   renderTpls(TPLS_FB);
   renderDif(DIF_FB);
-  renderPrecos();
   renderFaq(FAQ_FB);
   renderDeps(DEPS_FB);
   renderNews(NEWS_FB);
