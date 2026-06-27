@@ -254,21 +254,18 @@ body{background:var(--dark);color:var(--white);font-weight:400;line-height:1.6;p
 
 /* ── DEPOIMENTOS ── */
 .dep-sec{background:var(--dark)}
-.dep-slide{min-width:100%;width:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;position:relative;min-height:400px;padding:40px;background:var(--charcoal);border-radius:16px;flex-shrink:0}
-.dep-quote-mark{font-size:5rem;font-weight:900;line-height:.8;color:var(--blue);opacity:.35;margin-bottom:8px;font-family:Georgia,serif}
-.dep-texto{font-size:1.15rem;font-style:italic;font-weight:300;color:var(--white);line-height:1.75;max-width:680px;margin-bottom:28px}
+.dep-slide{min-width:100%;width:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;position:relative;padding:32px;background:var(--charcoal);border-radius:16px;flex-shrink:0}
 .dep-autor{display:flex;align-items:center;gap:14px}
 .dep-av{width:46px;height:46px;border-radius:50%;background:var(--charcoal-lt);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:var(--blue);flex-shrink:0}
 .dep-nome{font-size:.9rem;font-weight:700}
 .dep-cargo{font-size:.72rem;color:var(--gray);margin-top:2px}
-.dep-stars{display:flex;gap:3px;margin-bottom:4px}
-.dep-stars i{color:#f59e0b;font-size:.75rem}
+.dep-texto{font-size:1.05rem;font-style:italic;font-weight:300;color:rgba(255,255,255,.85);line-height:1.8;max-width:680px;margin-top:18px}
 .dep-bg-glow{position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at right,rgba(10,102,194,.06) 0%,transparent 70%);pointer-events:none;border-radius:16px}
 
 @media(max-width:860px){
   .preco-grid{grid-template-columns:1fr}
-  .dep-slide{min-height:320px;padding:28px}
-  .dep-texto{font-size:.95rem}
+  .dep-slide{padding:24px}
+  .dep-texto{font-size:.92rem}
 }
 
 /* ── CTA desc update ── */
@@ -340,8 +337,8 @@ footer{background:var(--black);border-top:1px solid var(--divider);padding:4rem 
   .passos{grid-template-columns:1fr 1fr}
   .tpl-card{flex:0 0 100%;height:420px}
   .preco-model.active{grid-template-columns:1fr 1fr}
-  .dep-slide{min-height:320px;padding:28px}
-  .dep-texto{font-size:.95rem}
+  .dep-slide{padding:24px}
+  .dep-texto{font-size:.92rem}
   .preco-toggle{flex-wrap:wrap;justify-content:center}
 }
 @media(max-width:540px){
@@ -1041,6 +1038,32 @@ function toggleFaq(i){
 }
 
 // ── FAQ ────────────────────────────────────────────────────
+function renderFaq(items){
+  const list=document.getElementById('faqList');
+  if(!list||!items||!items.length) return;
+  list.innerHTML=items.map((f,i)=>`
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        ${f.q}
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="faq-a"><p>${f.a}</p></div>
+    </div>`).join('');
+  list.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click',()=>{
+      const isOpen=item.classList.contains('open');
+      list.querySelectorAll('.faq-item.open').forEach(el=>{
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        item.querySelector('.faq-q').setAttribute('aria-expanded','true');
+      }
+    });
+  });
+}
+
 const FAQ_FB=[
   {cat:'Plataforma',q:'Como funciona o processo de criação do site?',a:'Escolhes um template, personalizas com as cores e produtos do teu negócio no Portal do Cliente, e a tua loja fica online. Sem código, sem complicações.'},
   {cat:'Plataforma',q:'Quanto tempo demora a minha loja a ficar online?',a:'Em média 7 dias úteis a partir do momento em que confirmas o pedido. Casos mais simples podem ficar prontos em menos tempo.'},
@@ -1070,9 +1093,6 @@ function renderDeps(items){
   track.innerHTML=items.map((d,i)=>`
     <div class="dep-slide${i===0?' active':''}">
       <div class="dep-bg-glow"></div>
-      <div class="dep-stars">${'<i class="fa-solid fa-star"></i>'.repeat(5)}</div>
-      <div class="dep-quote-mark">"</div>
-      <p class="dep-texto">${d.texto}</p>
       <div class="dep-autor">
         <div class="dep-av" style="color:${d.cor||'var(--blue)'};border-color:${d.cor||'var(--blue)'}44">${d.iniciais}</div>
         <div>
@@ -1080,6 +1100,7 @@ function renderDeps(items){
           <div class="dep-cargo">${d.cargo}</div>
         </div>
       </div>
+      <p class="dep-texto">${d.texto}</p>
     </div>`
   ).join('');
   dots.innerHTML=items.map((_,i)=>`<div class="cdot${i===0?' active':''}" onclick="goDep(${i})"></div>`).join('');

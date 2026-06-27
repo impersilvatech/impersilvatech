@@ -307,11 +307,7 @@
 }
 .plat-cats-more:hover { border-color:var(--blue);color:var(--blue-lt) }
 .plat-carousel { position:relative }
-.plat-car-footer {
-  display:flex;justify-content:space-between;align-items:center;
-  padding:10px 0 0;
-}
-.plat-car-btns { display:flex;gap:6px }
+.plat-car-footer { padding:10px 0 0; display:flex; justify-content:center; }
 /* Altura do carousel */
 .plat-carousel .cat { height:360px !important }
 
@@ -367,10 +363,10 @@
   width: 100%; height: 100%;
   pointer-events: none; z-index: 0;
 }
-.ct  { fill: none; stroke: rgba(50, 150, 255, 0.16); stroke-width: 1.5; }
-.cn  { fill: rgba(60, 170, 255, 0.38); }
+.ct  { fill: none; stroke: rgba(50, 150, 255, 0.30); stroke-width: 1.5; }
+.cn  { fill: rgba(60, 170, 255, 0.55); }
 .cp  {
-  fill: none; stroke-linecap: round; stroke-width: 2;
+  fill: none; stroke-linecap: round; stroke-width: 2.5;
   stroke: rgba(140, 225, 255, 0.95);
   stroke-dasharray: 20 900;
 }
@@ -381,6 +377,8 @@
 .cp4 { animation: cFlow 4.7s linear infinite 2.2s; }
 .cp5 { animation: cFlow 3.4s linear infinite 0.3s; }
 .cp6 { animation: cFlow 5.8s linear infinite 1.9s; }
+.cp7 { animation: cFlow 4.4s linear infinite 1s; }
+.cp8 { animation: cFlow 5s linear infinite 2.6s; }
 .pilar-icon { position:absolute;right:20px;top:18px;font-size:3.5rem;opacity:.08 }
 .pilar-num { position:absolute;right:16px;bottom:12px;font-weight:900;font-size:6rem;line-height:1;opacity:.05;letter-spacing:-3px }
 .pilar-body { position:relative;z-index:1;padding:28px;display:flex;flex-direction:column;flex:1 }
@@ -456,11 +454,7 @@
   .cat-desc { font-size:.78rem; }
 }
 
-.plat-car-footer {
-  display:flex;justify-content:space-between;align-items:center;
-  padding:10px 0 0;
-}
-.plat-car-btns { display:flex;gap:6px }
+
 
 /* ══ PILARES (Apenas TECH) ══ */
 .faq-sec { padding: 80px 0; background: var(--black); position: relative; overflow: hidden; }
@@ -739,29 +733,49 @@
   <div class="hero-glow-blue"></div>
   <div class="hero-stripe"></div>
   <!-- CIRCUITOS HERO -->
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.45">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55"  r="2.5"/><circle class="cn" cx="718" cy="55"  r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="108" r="2"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22"  cy="68"  r="2.5"/><circle class="cn" cx="84"  cy="68"  r="2"/><circle class="cn" cx="84"  cy="32"  r="2.5"/><circle class="cn" cx="158" cy="32"  r="2"/><circle class="cn" cx="158" cy="94"  r="2.5"/><circle class="cn" cx="114" cy="94"  r="2"/>
-    <circle class="cn" cx="58"  cy="248" r="2.5"/><circle class="cn" cx="58"  cy="206" r="2"/><circle class="cn" cx="118" cy="206" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="225" r="2.5"/><circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="375" cy="48"  r="2.5"/><circle class="cn" cx="448" cy="48"  r="2"/><circle class="cn" cx="448" cy="90"  r="2.5"/><circle class="cn" cx="386" cy="90"  r="2"/><circle class="cn" cx="386" cy="130" r="2.5"/><circle class="cn" cx="428" cy="130" r="2"/>
-    <circle class="cn" cx="44"  cy="118" r="2.5"/><circle class="cn" cx="44"  cy="156" r="2"/><circle class="cn" cx="20"  cy="156" r="2.5"/><circle class="cn" cx="20"  cy="196" r="2"/><circle class="cn" cx="62"  cy="196" r="2.5"/><circle class="cn" cx="62"  cy="175" r="2"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="622" cy="248" r="2"/><circle class="cn" cx="700" cy="248" r="2.5"/><circle class="cn" cx="700" cy="295" r="2"/>
-    <circle class="cn" cx="552" cy="36"  r="2.5"/><circle class="cn" cx="552" cy="62"  r="2"/><circle class="cn" cx="508" cy="62"  r="2.5"/><circle class="cn" cx="508" cy="96"  r="2"/><circle class="cn" cx="575" cy="96"  r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="cp cp6" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
+  <svg class="circuit-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.7">
+    <!-- Canto superior esquerdo → entra para o centro -->
+    <path class="ct" d="M 0 0 H 100 V 55 H 60 V 110 H 130 V 75 H 200 V 145 H 155 V 210 H 110"/>
+    <!-- Canto superior direito → entra para o centro -->
+    <path class="ct" d="M 800 0 H 700 V 60 H 740 V 120 H 670 V 85 H 610 V 150 H 650 V 200"/>
+    <!-- Canto inferior esquerdo → sobe para o centro -->
+    <path class="ct" d="M 0 500 H 90 V 430 H 50 V 370 H 120 V 400 H 180 V 330 H 140 V 270"/>
+    <!-- Canto inferior direito → sobe para o centro -->
+    <path class="ct" d="M 800 500 H 710 V 420 H 750 V 360 H 680 V 400 H 630 V 330"/>
+    <!-- Faixa central superior -->
+    <path class="ct" d="M 310 0 V 55 H 360 V 30 H 420 V 70 H 470 V 25 H 520 V 65 H 490 V 110 H 540 V 80 H 580"/>
+    <!-- Faixa central inferior -->
+    <path class="ct" d="M 270 500 V 445 H 330 V 470 H 390 V 430 H 450 V 460 H 510 V 420 H 570 V 450"/>
+    <!-- Cruzamento lateral esquerdo -->
+    <path class="ct" d="M 0 250 H 55 V 220 H 90 V 270 H 45 V 310 H 100 V 280 H 155"/>
+    <!-- Cruzamento lateral direito -->
+    <path class="ct" d="M 800 250 H 745 V 215 H 710 V 265 H 755 V 305 H 700 V 275 H 645"/>
+    <path class="ct" d="M 200 250 V 300 H 245 V 340 H 200 V 380 H 260"/>
+    <path class="ct" d="M 600 250 V 300 H 555 V 340 H 600 V 380 H 540"/>
+    <path class="ct" d="M 400 0 V 30 H 440 V 0"/>
+    <path class="ct" d="M 400 500 V 470 H 360 V 500"/>
+    <circle class="cn" cx="245" cy="300" r="2.5"/><circle class="cn" cx="245" cy="340" r="2"/><circle class="cn" cx="200" cy="380" r="2.5"/>
+    <circle class="cn" cx="555" cy="300" r="2.5"/><circle class="cn" cx="555" cy="340" r="2"/><circle class="cn" cx="600" cy="380" r="2.5"/>
+    <circle class="cn" cx="440" cy="30" r="2.5"/><circle class="cn" cx="360" cy="470" r="2.5"/>
+
+    <!-- Nós -->
+    <circle class="cn" cx="100" cy="55" r="2.5"/><circle class="cn" cx="60" cy="110" r="2"/><circle class="cn" cx="130" cy="75" r="2.5"/><circle class="cn" cx="200" cy="145" r="2"/><circle class="cn" cx="155" cy="210" r="2.5"/>
+    <circle class="cn" cx="700" cy="60" r="2.5"/><circle class="cn" cx="740" cy="120" r="2"/><circle class="cn" cx="670" cy="85" r="2.5"/><circle class="cn" cx="610" cy="150" r="2"/><circle class="cn" cx="650" cy="200" r="2.5"/>
+    <circle class="cn" cx="90" cy="430" r="2.5"/><circle class="cn" cx="50" cy="370" r="2"/><circle class="cn" cx="120" cy="400" r="2.5"/><circle class="cn" cx="180" cy="330" r="2"/><circle class="cn" cx="140" cy="270" r="2.5"/>
+    <circle class="cn" cx="710" cy="420" r="2.5"/><circle class="cn" cx="750" cy="360" r="2"/><circle class="cn" cx="680" cy="400" r="2.5"/><circle class="cn" cx="630" cy="330" r="2.5"/>
+    <circle class="cn" cx="360" cy="55" r="2.5"/><circle class="cn" cx="420" cy="70" r="2"/><circle class="cn" cx="470" cy="25" r="2.5"/><circle class="cn" cx="540" cy="80" r="2"/><circle class="cn" cx="490" cy="110" r="2.5"/>
+    <circle class="cn" cx="55" cy="220" r="2.5"/><circle class="cn" cx="90" cy="270" r="2"/><circle class="cn" cx="45" cy="310" r="2.5"/><circle class="cn" cx="155" cy="280" r="2"/>
+    <circle class="cn" cx="745" cy="215" r="2.5"/><circle class="cn" cx="710" cy="265" r="2"/><circle class="cn" cx="755" cy="305" r="2.5"/><circle class="cn" cx="645" cy="275" r="2"/>
+
+    <!-- Pulsos animados -->
+    <path class="cp cp1" d="M 0 0 H 100 V 55 H 60 V 110 H 130 V 75 H 200 V 145 H 155 V 210 H 110"/>
+    <path class="cp cp2" d="M 800 0 H 700 V 60 H 740 V 120 H 670 V 85 H 610 V 150 H 650 V 200"/>
+    <path class="cp cp3" d="M 0 500 H 90 V 430 H 50 V 370 H 120 V 400 H 180 V 330 H 140 V 270"/>
+    <path class="cp cp4" d="M 800 500 H 710 V 420 H 750 V 360 H 680 V 400 H 630 V 330"/>
+    <path class="cp cp5" d="M 310 0 V 55 H 360 V 30 H 420 V 70 H 470 V 25 H 520 V 65 H 490 V 110 H 540 V 80 H 580"/>
+    <path class="cp cp6" d="M 0 250 H 55 V 220 H 90 V 270 H 45 V 310 H 100 V 280 H 155"/>
+    <path class="cp cp7" d="M 200 250 V 300 H 245 V 340 H 200 V 380 H 260"/>
+    <path class="cp cp8" d="M 600 250 V 300 H 555 V 340 H 600 V 380 H 540"/>
   </svg>
   <div class="hero-content">
     <div class="hero-label">
@@ -791,30 +805,6 @@
 
 <!-- PLATAFORMA UNIFICADA -->
 <section class="plataforma-sec">
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.4">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="94" r="2.5"/>
-    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="118" cy="272" r="2.5"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="375" cy="48" r="2.5"/><circle class="cn" cx="448" cy="90" r="2.5"/><circle class="cn" cx="386" cy="130" r="2.5"/>
-    <circle class="cn" cx="62" cy="196" r="2.5"/><circle class="cn" cx="20" cy="156" r="2.5"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="700" cy="295" r="2.5"/>
-    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp2" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="cp cp6" d="M 0 118 H 44 V 156 H 20 V 196 H 62 V 175 H 105"/>
-  </svg>
 
   <div class="pilares-inner">
     <div class="plat-grid">
@@ -823,8 +813,8 @@
       <div class="plat-left reveal">
         <div class="sec-tag">A nossa plataforma</div>
         <div class="plat-title">
-          A tua loja online.<br>
-          <span class="accent-blue">Sem complicações.</span>
+          Cria o teu site<br>
+          na nossa <span class="accent-blue">Plataforma Self-Service</span>
         </div>
         <p class="plat-desc-txt">Acede ao Portal do Cliente, escolhe o template ideal, adiciona os teus produtos e lança — sem precisar de técnicos. Tu controlas tudo, do catálogo às encomendas, em tempo real.</p>
 
@@ -861,10 +851,6 @@
           </div>
           <div class="plat-car-footer">
             <div class="cats-dots" id="catsDots"></div>
-            <div class="plat-car-btns">
-              <button class="dep-btn" onclick="moveCat(-1)" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="dep-btn" onclick="moveCat(1)"  aria-label="Seguinte"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
           </div>
         </div>
         <a href="/tech.html" class="plat-cats-more" style="margin-top:12px">
@@ -987,26 +973,22 @@
 
 <section class="cta-section">
   <!-- CIRCUITOS CTA -->
-  <svg class="circuit-svg" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="opacity:.3">
-    <path class="ct" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="ct" d="M 22 0 V 68 H 84 V 32 H 158 V 94 H 114 V 148"/>
-    <path class="ct" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="ct" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="ct" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="ct" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
-    <path class="ct" d="M 500 0 V 36 H 552 V 62 H 508 V 96 H 575 V 0"/>
-    <circle class="cn" cx="788" cy="55" r="2.5"/><circle class="cn" cx="718" cy="55" r="2"/><circle class="cn" cx="718" cy="108" r="2.5"/><circle class="cn" cx="768" cy="168" r="2.5"/>
-    <circle class="cn" cx="22" cy="68" r="2.5"/><circle class="cn" cx="84" cy="32" r="2.5"/><circle class="cn" cx="158" cy="94" r="2.5"/>
-    <circle class="cn" cx="58" cy="248" r="2.5"/><circle class="cn" cx="118" cy="272" r="2"/><circle class="cn" cx="198" cy="272" r="2.5"/>
-    <circle class="cn" cx="748" cy="278" r="2"/><circle class="cn" cx="686" cy="278" r="2.5"/>
-    <circle class="cn" cx="375" cy="48" r="2.5"/><circle class="cn" cx="448" cy="90" r="2.5"/><circle class="cn" cx="386" cy="130" r="2.5"/>
-    <circle class="cn" cx="622" cy="285" r="2.5"/><circle class="cn" cx="700" cy="248" r="2.5"/>
-    <circle class="cn" cx="552" cy="36" r="2.5"/><circle class="cn" cx="508" cy="62" r="2.5"/><circle class="cn" cx="575" cy="96" r="2.5"/>
-    <path class="cp cp1" d="M 788 0 V 55 H 718 V 108 H 768 V 168 H 800"/>
-    <path class="cp cp3" d="M 0 248 H 58 V 206 H 118 V 272 H 198 V 340"/>
-    <path class="cp cp4" d="M 800 225 H 748 V 278 H 686 V 340"/>
-    <path class="cp cp5" d="M 375 0 V 48 H 448 V 90 H 386 V 130 H 428 V 165"/>
-    <path class="cp cp6" d="M 565 340 V 285 H 622 V 248 H 700 V 295 H 800"/>
+  <svg class="circuit-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="opacity:.55">
+    <path class="ct" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="ct" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
+    <path class="ct" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="ct" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="ct" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+    <circle class="cn" cx="80" cy="45" r="2.5"/><circle class="cn" cx="40" cy="90" r="2"/><circle class="cn" cx="100" cy="65" r="2.5"/><circle class="cn" cx="160" cy="130" r="2"/>
+    <circle class="cn" cx="720" cy="50" r="2.5"/><circle class="cn" cx="760" cy="100" r="2"/><circle class="cn" cx="700" cy="70" r="2.5"/><circle class="cn" cx="640" cy="135" r="2"/>
+    <circle class="cn" cx="75" cy="240" r="2.5"/><circle class="cn" cx="35" cy="190" r="2"/><circle class="cn" cx="105" cy="220" r="2.5"/>
+    <circle class="cn" cx="725" cy="235" r="2.5"/><circle class="cn" cx="765" cy="185" r="2"/><circle class="cn" cx="645" cy="155" r="2.5"/>
+    <circle class="cn" cx="390" cy="40" r="2.5"/><circle class="cn" cx="440" cy="55" r="2"/><circle class="cn" cx="490" cy="20" r="2.5"/>
+    <path class="cp cp1" d="M 0 0 H 80 V 45 H 40 V 90 H 100 V 65 H 160 V 130"/>
+    <path class="cp cp3" d="M 0 300 H 75 V 240 H 35 V 190 H 105 V 220 H 165 V 160"/>
+    <path class="cp cp4" d="M 800 300 H 725 V 235 H 765 V 185 H 705 V 215 H 645 V 155"/>
+    <path class="cp cp5" d="M 340 0 V 40 H 390 V 18 H 440 V 55 H 490 V 20 H 540 V 50 H 580"/>
+    <path class="cp cp6" d="M 800 0 H 720 V 50 H 760 V 100 H 700 V 70 H 640 V 135"/>
   </svg>
   <div class="container">
     <div class="section-tag reveal">
@@ -1186,6 +1168,8 @@ function renderCatsSlider(cats){
 
   clearInterval(catTimer);
   catTimer=setInterval(()=>{ if(!catPaused) moveCat(1); },4500);
+  const sl=document.querySelector('.plat-carousel .cats-slider');
+  if(sl) addSwipe(sl, dir=>{ catPaused=false; moveCat(dir); });
 }
 function goCat(i){
   catIdx=(i+catData.length)%catData.length;
@@ -1194,6 +1178,31 @@ function goCat(i){
   document.querySelectorAll('.cat').forEach((c,j)=>c.classList.toggle('active',j===catIdx));
 }
 function moveCat(dir){goCat(catIdx+dir);}
+
+// ── SWIPE (carousels exceto news) ─────────────────────────
+function addSwipe(el, onSwipe){
+  let x0=null, t0=null;
+  el.addEventListener('touchstart', e=>{ x0=e.touches[0].clientX; t0=Date.now(); },{passive:true});
+  el.addEventListener('touchmove', e=>{
+    if(x0===null) return;
+    if(Math.abs(e.touches[0].clientX-x0)>8) e.preventDefault();
+  },{passive:false});
+  el.addEventListener('touchend', e=>{
+    if(x0===null) return;
+    const dx=e.changedTouches[0].clientX-x0, dt=Date.now()-t0;
+    if(Math.abs(dx)>40&&dt<500) onSwipe(dx<0?1:-1);
+    x0=null;
+  },{passive:true});
+  let mx=null;
+  el.addEventListener('mousedown', e=>{ mx=e.clientX; el.style.cursor='grabbing'; });
+  window.addEventListener('mouseup', e=>{
+    if(mx===null) return;
+    const dx=e.clientX-mx;
+    el.style.cursor='';
+    if(Math.abs(dx)>40) onSwipe(dx<0?1:-1);
+    mx=null;
+  });
+}
 
 // ── FAQ ACORDEÃO ──────────────────────────────────────────
 document.querySelectorAll('.faq-q').forEach(btn => {
